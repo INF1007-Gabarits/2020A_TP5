@@ -3096,6 +3096,7 @@ model_df, dic_model, dic_score = Forcasting_model.train_model(train_df,["Confirm
 
   {'LR Train': 0.8394259736678936, 'SVM Train ': 0.9982192780430433}
 
+Une fois l’entrainement de notre modèle est terminé, il devient possible de visualiser les performances de notre modélisation et de vérifier ainsi sa robustesse.
 ```python
 Forcasting_model.plotmodel(country_df, model_df)
 ```
