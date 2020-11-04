@@ -26,7 +26,7 @@
 
 ## Introduction
 <p align="justify">
-L’analyse des données est une des disciplines les plus prisées de nos jours. Outil stratégique au sein des organisations, elle permet entre autres de mieux comprendre des événements qui se produisent avec les facteurs qui les favorisent, ou encore de mesurer l’impact d’une opération ou d’une politique grâce à des indicateurs de performance. Dans ce laboratoire, nous essayons de mieux comprendre l’évolution de la pandémie du nouveau coronavirus Covid-19 au Canada et dans les pays les plus touchés.</p>
+L’analyse des données fait partie des disciplines les plus prisées de nos jours. Outil stratégique au sein des organisations, elle permet entre autres de mieux comprendre des événements qui se produisent avec les facteurs qui les favorisent, ou encore de mesurer l’impact d’une opération ou d’une politique grâce à des indicateurs de performance. Dans ce laboratoire, nous essayons de mieux comprendre l’évolution de la pandémie du nouveau coronavirus Covid-19 au Canada et dans les pays les plus touchés.</p>
 
 ## Partie 1: Importer et manipuler les bases de données
 <p align="justify">
@@ -47,14 +47,14 @@ add_recovered_df = add_path + 'csse_covid_19_time_series/time_series_covid19_rec
 add_summury_df   = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/web-data/data/cases_country.csv'
 ```
 <p align="justify">
-La première étape du laboratoire consiste à importer les quatre bases de données. Pour cela on va utiliser la fonction <strong>Load_df(...).</strong> Cette fonction a pour objectif d’importer et créer les quatre bases de données à partir des liens URL reçus en paramètre.</p>
+La première étape du laboratoire consiste à importer les quatre bases de données. Pour cela on va utiliser la fonction <strong>Load_df(...).</strong> Cette fonction a pour objectif d’importer et créer les quatres bases de données à partir des liens URL reçus en paramètre.</p>
 
 ```python
 [death_df, confirmed_df,recovered_df, summury_df] = Load_df(add_death_df, add_confirmed_df, 
                                                             add_recovered_df, add_summury_df)
 ```
 <p align="justify">
-Une fois l’importation des bases de données est effectuée, on doit s’assurer que l’opération s’est bien déroulée. Pour cela on va afficher les 10 premiers éléments de chaque base de données. Vous trouveriez ci-dessous un aperçu du résultat attendu.</p>
+Une fois l’importation des bases de données est effectuée, on doit nous assurer que l’opération s’est bien déroulée. Pour cela on va afficher les 10 premiers éléments de chaque base de données. Vous trouveriez ci-dessous un aperçu du résultat attendu.</p>
 
 ```python
 death_df.head(10)
@@ -1080,7 +1080,7 @@ summary_df.head(10)
 
 ### 1.2. Prétraitement des données:
 <p align="justify">
-Au vu de la diversité des sources, les formats des données diffèrent souvent les uns des autres, et ne sont point toujours compréhensibles ni utiles à l’état brut. À cet effet, le prétraitement s’avère être une étape fondamentale de toute exploration de données, et de sa réussite dépend considérablement la qualité des résultats de l’analyse proprement dite. Dans cette partie du laboratoire, nous effectuerons quelques transformations et filtres afin de nous focaliser sur l’essentiel et d’en obtenir un format compréhensible et peu fastidieux à analyser. </p>
+Au vu de la diversité des sources, les formats des données diffèrent souvent les uns des autres, et ne sont pas toujours compréhensibles ni utiles à l’état brut. À cet effet, le prétraitement s’avère être une étape fondamentale de toute exploration de données, et  sa réussite dépend considérablement de la qualité des résultats de l’analyse proprement dite. Dans cette partie du laboratoire, nous effectuerons quelques transformations et filtres afin de nous focaliser sur l’essentiel et d’en obtenir un format compréhensible et peu fastidieux à analyser. </p>
 
 Les bases de données importées précédemment se divisent en deux catégories :
 1. Sommaire mondial des nombres de cas confirmé, mort, actif et rétabli (summary_df).
@@ -2724,7 +2724,7 @@ dict_df_by_country["Active"].head(10)
 </table>
 
 <p align="justify">
-Aussi, afin de faire une observation de l'évolution de la pandémie en fonction du temps, il nous faut transformer le dictionnaire dict_df en séries temporelles. Cela consistera, entre autres tâches, à transposer le dictionnaire dict_df_by_country afin d’avoir les dates en index. Pour cela on va utiliser la fonction <strong>dictdfbyday(...)</strong>.</p>
+Aussi, afin de faire une observation de l'évolution de la pandémie en fonction du temps, il nous faut transformer le dictionnaire dict_df en séries temporelles. Cela consistera, entre autres à transposer le dictionnaire dict_df_by_country afin d’avoir les dates en index. Pour cela on va utiliser la fonction <strong>dictdfbyday(...)</strong>.</p>
 
 ```python
 dict_df_by_day = Data_Processing.dictdfbyday(dict_df_by_country)
@@ -3008,21 +3008,21 @@ Les bases de données sont à présent assez bien structurées on peut maintenan
 
 ### 2.1. Analyse des données mondiales:
 
-La première visualisation consiste à visualiser les dix pays les plus touchés par la Covid_19 selon le nombre de cas confirmés, mort, actif, fermé et rétabli ainsi que le taux de mortalité (utiliser la bibliothèque seaborn).
+La première visualisation consiste à analyser les dix pays les plus touchés par la Covid_19 selon le nombre de cas confirmés, mort, actif, fermé et rétabli ainsi que le taux de mortalité (utiliser la bibliothèque seaborn).
 
 ```python
 world_wild_analysis.summaryanalyseData(summary_df_by_country)
 ```
 ![svg](Image/fig_01.svg)
 
-La seconde visualisation consiste à visualiser le pourcentage mondial des cas confirmés par pays, le pourcentage est calculé par rapport au nombre de cas confirmé dans le monde (utiliser la méthode plotly.express).
+La seconde visualisation consiste à analyser le pourcentage mondial des cas confirmés par pays, le pourcentage est calculé par rapport au nombre de cas confirmé dans le monde (utiliser la méthode plotly.express).
 
 ```python
 world_wild_analysis.summarysecteur(summary_df)
 ```
 ![svg](Image/fig_02.svg)
 
-La troisième visualisation consiste à visualiser pour certains pays le nombre de cas confirmés, mort, actif, fermé et rétabli (utiliser la méthode plotly.graph_objects).
+La troisième visualisation consiste à analyser pour certains pays le nombre de cas confirmés, mort, actif, fermé et rétabli (utiliser la méthode plotly.graph_objects).
 
 ```python
 countries = ["Spain","Canada","Italy","China"]
@@ -3082,7 +3082,7 @@ Countries_analysis.weeklybar(dict_df_by_day,"Spain")
 
 
 ## Partie 3: Modélisation et prévision
-L'analyse terminer, il devient possible de faire une modélisation du profil de l'évolution de la Covid_19 pour un pays, et ainsi faire une projection sur l'évolution de la pandémie.
+L'analyse terminé, il devient possible de faire une modélisation du profil de l'évolution de la Covid_19 pour un pays, et ainsi faire une projection sur l'évolution de la pandémie.
 
 Pour cela on va commencer par la création de nos données d'entrainement, ses données vont servir à entrainer notre modèle et le rendre le plus robuste possible.
 
@@ -3096,7 +3096,7 @@ model_df, dic_model, dic_score = Forcasting_model.train_model(train_df,["Confirm
 
   {'LR Train': 0.8394259736678936, 'SVM Train ': 0.9982192780430433}
 
-Une fois l’entrainement de notre modèle est terminé, il devient possible de visualiser les performances de notre modélisation et de vérifier ainsi sa robustesse.
+Une fois l’entrainement de notre modèle  terminé, il devient possible de visualiser les performances de notre modélisation et de vérifier ainsi sa robustesse.
 ```python
 Forcasting_model.plotmodel(country_df, model_df)
 ```
