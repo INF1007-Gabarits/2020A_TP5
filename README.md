@@ -3102,7 +3102,8 @@ Forcasting_model.plotmodel(country_df, model_df)
 ```
 ![svg](Image/fig_07.svg)
 
-PS: Donner
+Après les dates pour lesquelles nous avons des données, le modèle peut naturellement être développé. Il donne une perspective possible de prédire l’évolution des cas confirmés de Covid_19.
+
 ```python
 model_pred_df = Forcasting_model.predictionmodel(country_df, train_df, model_df, dic_model)
 ```
