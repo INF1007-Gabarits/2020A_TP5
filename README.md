@@ -3008,21 +3008,21 @@ Les bases de données sont à présent assez bien structurées on peut maintenan
 
 ### 2.1. Analyse des données mondiales:
 
-La première visualisation consiste à analyser les dix pays les plus touchés par la Covid_19 selon le nombre de cas confirmés, mort, actif, fermé et rétabli ainsi que le taux de mortalité (utiliser la bibliothèque seaborn).
+La première analyse consiste à visualiser les dix pays les plus touchés par la Covid_19 selon le nombre de cas confirmés, mort, actif, fermé et rétabli ainsi que le taux de mortalité (utiliser la bibliothèque seaborn).
 
 ```python
 world_wild_analysis.summaryanalyseData(summary_df_by_country)
 ```
 ![svg](Image/fig_01.svg)
 
-La seconde visualisation consiste à analyser le pourcentage mondial des cas confirmés par pays, le pourcentage est calculé par rapport au nombre de cas confirmé dans le monde (utiliser la méthode plotly.express).
+La seconde analyse consiste à visualiser le pourcentage mondial des cas confirmés par pays, le pourcentage est calculé par rapport au nombre de cas confirmé dans le monde (utiliser la méthode plotly.express).
 
 ```python
 world_wild_analysis.summarysecteur(summary_df)
 ```
 ![svg](Image/fig_02.svg)
 
-La troisième visualisation consiste à analyser pour certains pays le nombre de cas confirmés, mort, actif, fermé et rétabli (utiliser la méthode plotly.graph_objects).
+La troisième analyse consiste à visualiser pour certains pays le nombre de cas confirmés, mort, actif, fermé et rétabli (utiliser la méthode plotly.graph_objects).
 
 ```python
 countries = ["Spain","Canada","Italy","China"]
@@ -3073,7 +3073,7 @@ Countries_analysis.dailyplotcountries(dict_df_by_day, countries)
  
 ![svg](Image/fig_05.svg)
 
-Dans le cas du Covid_19, il devient intéressant de voir l’évolution hebdomadaire de la pandémie pour un pays. Pour cela on va utiliser le dictionnaire créé précédemment, pour créer un autre avec une évolution hebdomadaire comme index. 
+Dans le cas du Covid_19, il devient intéressant de visualiser l’évolution hebdomadaire de la pandémie pour un pays. Pour cela on va utiliser le dictionnaire créé précédemment, pour créer un autre avec une évolution hebdomadaire comme index. 
 
 ```python
 Countries_analysis.weeklybar(dict_df_by_day,"Spain")
