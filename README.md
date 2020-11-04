@@ -3031,7 +3031,7 @@ world_wild_analysis.countriesbar(summary_df_by_country, countries)
 ![svg](Image/fig_03.svg)
 
 ### 2.2. Analyse des donnée des pays:
-PS: Donner
+La Covid_19 se répand dans le monde entier. L'un des meilleurs moyens de visualiser les données consiste à mapper les données sur la carte du monde. Heureusement, il est facile de créer une carte interactive comme celle ci-dessous.
 ```python
 word_pic = r"...\World_Map.shp"
 Countries_analysis.worldmap(dict_df_by_country,"Confirmed",word_pic)
