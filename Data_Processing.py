@@ -31,6 +31,8 @@ def dictdfremovecol(dict_df, cols):
 
 def dictdfbycountry(dict_df):
     #TO DO: grouper le dictionnaire de DataFrame par Country/Region et changer les colonnes en datetime 
+    # Utiliser les liens suivant pour plus d'information: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html
+    # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html
 
     
     
