@@ -7,7 +7,7 @@ import Countries_analysis as ca
 import Forcasting_model as fm
 
 if __name__ == '__main__':
-    ## Partie 1:
+    ## Partie 1: Data_Processing
     add_path         =  'https://raw.githubusercontent.com/CSSEGISandData/'\
                         'COVID-19/master/csse_covid_19_data/';
     add_death_df     = add_path + 'csse_covid_19_time_series/'\
@@ -48,7 +48,6 @@ if __name__ == '__main__':
     dict_df_by_country = dp.dictdfbycountry(dict_df)
     print("\n Data dict_df (Recovered): \n", dict_df_by_country["Recovered"].head(10))
     
-    
     dict_df_by_country = dp.dictdfaddkey(dict_df_by_country)
     print("\n Data dict_df (Active): \n", dict_df_by_country["Active"].head(10))
     
@@ -57,6 +56,7 @@ if __name__ == '__main__':
     
     dp.basicinfsummury(summury_df) 
     
+    ## Partie 2.1: world_wild_analysis
     wa.summuryanalyseData(summury_df_by_country)
 
     wa.summurysecteur(summury_df)
@@ -64,6 +64,7 @@ if __name__ == '__main__':
     countries = ["Spain","Canada","Italy","China"]
     wa.countriesbar(summury_df_by_country, countries)
     
+    ## Partie 2.2: Countries_analysis
     word_pic = r"...\World_Map\World_Map.shp"
     wa.worldmap(dict_df_by_country,"Confirmed",word_pic)
     
@@ -73,6 +74,7 @@ if __name__ == '__main__':
     
     ca.weeklybar(dict_df_by_day,"Spain")
     
+    ## Partie 3: Forcasting_model
     country_df, train_df = fm.CreatCountryDataTrain(dict_df_by_day, "Spain")
     
     model_df, dic_model, dic_score = fm.train_model(train_df,["Confirmed"])
@@ -82,7 +84,3 @@ if __name__ == '__main__':
     model_pred_df = fm.predictionmodel(country_df, train_df, model_df, dic_model)
     
     fm.plofforcasting(country_df, model_df, model_pred_df)
-
-    
-    
-    
