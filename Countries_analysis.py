@@ -9,7 +9,9 @@ import plotly.graph_objects as go
 import PIL 
 import io
 import plotly.io as pio
-    
+
+COLOR = ["blue","red","green","gray","orange"]
+
 def worldmap(dict_df,case_type,word_pic):
     world = gpd.read_file(word_pic)
 
@@ -60,7 +62,6 @@ def worldmap(dict_df,case_type,word_pic):
 
 def worldcases(dict_df):
     #TO DO: visualiser l’évolution du nombre cumulé des cas confirmés, rétablis, morts, actif et fermé dans le monde.
-    color = ["blue","red","green","gray","orange"]
     #TO DO: Creer une figure en utilisant la biblioteque plotly.graph_objects
 
     #TO DO: Pour chacune des cle du dictionnaire dict_df visualiser l’évolution du nombre cumulé
