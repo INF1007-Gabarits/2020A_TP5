@@ -7,6 +7,7 @@ import countries_analysis as ca
 import forcasting_model as fm
 
 Countries = ["Spain", "Canada", "Italy", "China"]
+World_PIC = r"World_Map\World_Map.shp"
 
 if __name__ == '__main__':
 
@@ -59,8 +60,7 @@ if __name__ == '__main__':
     wa.countries_bar(summury_df_by_country, Countries)
 
     # Partie 2.2: countries_analysis
-    word_pic = r"World_Map\World_Map.shp"
-    ca.world_map(dict_df_by_country, "Confirmed", word_pic)
+    ca.world_map(dict_df_by_country, "Confirmed", World_PIC)
 
     ca.world_cases(dict_df_by_country)
     
