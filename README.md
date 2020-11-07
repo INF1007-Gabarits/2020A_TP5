@@ -60,7 +60,7 @@ Une fois l’importation des bases de données est effectuée, on doit nous assu
 death_df.head(10)
 ```
 
-<table border="1" class="dataframe" font-size=11pt>
+<table border="1" class="dataframe" font-size=5pt>
   <thead>
     <tr style="text-align: right;">
       <th></th>
