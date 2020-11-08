@@ -60,19 +60,10 @@ Une fois l’importation des bases de données est effectuée, on doit nous assu
 death_df.head(10)
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+<style>
+td {
+  font-size: 50px
+}
 </style>
 <table border="1" class="dataframe">
   <thead>
