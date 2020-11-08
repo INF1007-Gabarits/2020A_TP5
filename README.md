@@ -3025,22 +3025,21 @@ Les bases de données sont à présent assez bien structurées on peut maintenan
 La première analyse consiste à visualiser les dix pays les plus touchés par la Covid_19 selon le nombre de cas confirmés, mort, actif, fermé et rétabli ainsi que le taux de mortalité (utiliser la bibliothèque seaborn).
 
 ```python
-world_wild_analysis.summaryanalyseData(summary_df_by_country)
+wa.summury_analyse_data(summury_df_by_country)
 ```
 ![svg](Image/fig_01.svg)
 
 La seconde analyse consiste à visualiser le pourcentage mondial des cas confirmés par pays, le pourcentage est calculé par rapport au nombre de cas confirmé dans le monde (utiliser la méthode plotly.express).
 
 ```python
-world_wild_analysis.summarysecteur(summary_df)
+wa.summury_secteur(summury_df)
 ```
 ![svg](Image/fig_02.svg)
 
 La troisième analyse consiste à visualiser pour certains pays le nombre de cas confirmés, mort, actif, fermé et rétabli (utiliser la méthode plotly.graph_objects).
 
 ```python
-countries = ["Spain","Canada","Italy","China"]
-world_wild_analysis.countriesbar(summary_df_by_country, countries)
+wa.countries_bar(summury_df_by_country, COUNTRIES)
 ```
 ![svg](Image/fig_03.svg)
 
@@ -3048,17 +3047,17 @@ world_wild_analysis.countriesbar(summary_df_by_country, countries)
 La Covid_19 se répand dans le monde entier. L'un des meilleurs moyens de visualiser les données consiste à mapper les données sur la carte du monde. Heureusement, il est facile de créer une carte interactive comme celle ci-dessous.
 ```python
 word_pic = r"...\World_Map.shp"
-Countries_analysis.worldmap(dict_df_by_country,"Confirmed",word_pic)
+ca.world_map(dict_df_by_country, "Confirmed", World_PIC)
 ```
 ![](Image/Confirmed.gif)
 En utilisant le dictionnaire dict_df_by_country créé précédemment, il est possible de visualiser l’évolution du nombre cumulé des cas confirmés, rétablis, morts, actif et fermé dans le monde. 
 ```python
-Countries_analysis.worldcases(dict_df_by_country)
+ca.world_cases(dict_df_by_country)
 ```
 ![svg](Image/fig_04.svg)
 Aussi, en utilisant le dictionnaire dict_df_by_date créé précédemment, il est possible de visualiser l’évolution du nombre cumulé des cas confirmés, rétabli, morts, actifs et fermés pour un certain nombre de pays sélectionner. 
 ```python
-Countries_analysis.dailyplotcountries(dict_df_by_day, countries)
+ca.daily_plot_countries(dict_df_by_day, COUNTRIES)
 ```    
 <p><strong>Spain Covid_19 Statistics:</strong><br>
     Total number of Confirmed cases : 921374<br>
@@ -3090,7 +3089,7 @@ Countries_analysis.dailyplotcountries(dict_df_by_day, countries)
 Dans le cas du Covid_19, il devient intéressant de visualiser l’évolution hebdomadaire de la pandémie pour un pays. Pour cela on va utiliser le dictionnaire créé précédemment, pour créer un autre avec une évolution hebdomadaire comme index. 
 
 ```python
-Countries_analysis.weeklybar(dict_df_by_day,"Spain")
+ca.weekly_bar(dict_df_by_day, "US")
 ```
 ![svg](Image/fig_06.svg)
 
@@ -3101,29 +3100,29 @@ L'analyse terminé, il devient possible de faire une modélisation du profil de 
 Pour cela on va commencer par la création de nos données d'entrainement, ses données vont servir à entrainer notre modèle et le rendre le plus robuste possible.
 
 ```python
-country_df, train_df = Forcasting_model.CreatCountryDataTrain(dict_df_by_day, "Spain")
+country_df, train_df = fm.creat_country_data_train(dict_df_by_day, "US")
 ```
 La seconde étape consiste à entrainer notre modèle. Pour cela on va utiliser deux algorithmes (LR: Linear Regression et SVM:Support vector machine).
 ```python
-model_df, dic_model, dic_score = Forcasting_model.train_model(train_df,["Confirmed"])
+model_df, dic_model, dic_score = fm.train_model(train_df, ["Confirmed"])
 ```
 
   {'LR Train': 0.8394259736678936, 'SVM Train ': 0.9982192780430433}
 
 Une fois l’entrainement de notre modèle  terminé, il devient possible de visualiser les performances de notre modélisation et de vérifier ainsi sa robustesse.
 ```python
-Forcasting_model.plotmodel(country_df, model_df)
+fm.plot_model(country_df, model_df)
 ```
 ![svg](Image/fig_07.svg)
 
 Après les dates pour lesquelles nous avons des données, le modèle peut naturellement être développé. Il donne une perspective possible de prédire l’évolution des cas confirmés de Covid_19.
 
 ```python
-model_pred_df = Forcasting_model.predictionmodel(country_df, train_df, model_df, dic_model)
+model_pred_df = fm.prediction_model(country_df, train_df, dic_model)
 ```
 
 ```python
-Forcasting_model.plofforcasting(country_df, model_df, model_pred_df)
+fm.plot_forcasting(country_df, model_df, model_pred_df)
 ```
 ![svg](Image/fig_08.svg)
 
