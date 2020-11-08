@@ -60,11 +60,7 @@ Une fois l’importation des bases de données est effectuée, on doit nous assu
 death_df.head(10)
 ```
 
-<style>
-td {
-  font-size: 50px
-}
-</style>
+<font size="1">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -502,6 +498,7 @@ confirmed_df.head(10)
     </tr>
   </tbody>
 </table>
+</font> 
 
 ```python
 recovered_df.head(10)
