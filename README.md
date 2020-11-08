@@ -60,276 +60,183 @@ Une fois l’importation des bases de données est effectuée, on doit nous assu
 death_df.head(10)
 ```
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Province/State</th>
-      <th>Country/Region</th>
-      <th>Lat</th>
-      <th>Long</th>
-      <th>1/22/20</th>
-      <th>1/23/20</th>
-      <th>1/24/20</th>
-      <th>1/25/20</th>
-      <th>1/26/20</th>
-      <th>1/27/20</th>
-      <th>...</th>
-      <th>10/6/20</th>
-      <th>10/7/20</th>
-      <th>10/8/20</th>
-      <th>10/9/20</th>
-      <th>10/10/20</th>
-      <th>10/11/20</th>
-      <th>10/12/20</th>
-      <th>10/13/20</th>
-      <th>10/14/20</th>
-      <th>10/15/20</th>
+      <th>10/29/20</th>
+      <th>10/30/20</th>
+      <th>10/31/20</th>
+      <th>11/1/20</th>
+      <th>11/2/20</th>
+      <th>11/3/20</th>
+      <th>11/4/20</th>
+      <th>11/5/20</th>
+      <th>11/6/20</th>
+      <th>11/7/20</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>NaN</td>
-      <td>Afghanistan</td>
-      <td>33.93911</td>
-      <td>67.709953</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1467</td>
-      <td>1469</td>
-      <td>1470</td>
-      <td>1472</td>
-      <td>1473</td>
-      <td>1477</td>
-      <td>1479</td>
-      <td>1480</td>
-      <td>1481</td>
-      <td>1481</td>
+      <td>1532</td>
+      <td>1533</td>
+      <td>1536</td>
+      <td>1536</td>
+      <td>1541</td>
+      <td>1544</td>
+      <td>1548</td>
+      <td>1554</td>
+      <td>1554</td>
+      <td>1556</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>NaN</td>
-      <td>Albania</td>
-      <td>41.15330</td>
-      <td>20.168300</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>403</td>
-      <td>407</td>
-      <td>411</td>
-      <td>413</td>
-      <td>416</td>
-      <td>420</td>
-      <td>424</td>
-      <td>429</td>
-      <td>434</td>
-      <td>439</td>
+      <td>499</td>
+      <td>502</td>
+      <td>509</td>
+      <td>518</td>
+      <td>527</td>
+      <td>532</td>
+      <td>536</td>
+      <td>543</td>
+      <td>549</td>
+      <td>557</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>NaN</td>
-      <td>Algeria</td>
-      <td>28.03390</td>
-      <td>1.659600</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1768</td>
-      <td>1771</td>
-      <td>1783</td>
-      <td>1789</td>
-      <td>1795</td>
-      <td>1801</td>
-      <td>1809</td>
-      <td>1818</td>
-      <td>1827</td>
-      <td>1827</td>
+      <td>1949</td>
+      <td>1956</td>
+      <td>1964</td>
+      <td>1973</td>
+      <td>1980</td>
+      <td>1980</td>
+      <td>1999</td>
+      <td>2011</td>
+      <td>2024</td>
+      <td>2036</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>NaN</td>
-      <td>Andorra</td>
-      <td>42.50630</td>
-      <td>1.521800</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>53</td>
-      <td>53</td>
-      <td>54</td>
-      <td>55</td>
-      <td>55</td>
-      <td>55</td>
-      <td>57</td>
-      <td>57</td>
-      <td>59</td>
-      <td>59</td>
+      <td>73</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>NaN</td>
-      <td>Angola</td>
-      <td>-11.20270</td>
-      <td>17.873900</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>211</td>
-      <td>211</td>
-      <td>208</td>
-      <td>212</td>
-      <td>218</td>
-      <td>218</td>
-      <td>219</td>
-      <td>222</td>
-      <td>227</td>
-      <td>228</td>
+      <td>275</td>
+      <td>279</td>
+      <td>284</td>
+      <td>286</td>
+      <td>289</td>
+      <td>291</td>
+      <td>296</td>
+      <td>299</td>
+      <td>300</td>
+      <td>303</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>NaN</td>
-      <td>Antigua and Barbuda</td>
-      <td>17.06080</td>
-      <td>-61.796400</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>...</th>
       <td>...</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>NaN</td>
-      <td>Argentina</td>
-      <td>-38.41610</td>
-      <td>-63.616700</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>21827</td>
-      <td>22226</td>
-      <td>22710</td>
-      <td>23225</td>
-      <td>23581</td>
-      <td>23868</td>
-      <td>24186</td>
-      <td>24572</td>
-      <td>24921</td>
-      <td>25342</td>
+      <th>263</th>
+      <td>473</td>
+      <td>481</td>
+      <td>483</td>
+      <td>489</td>
+      <td>493</td>
+      <td>501</td>
+      <td>504</td>
+      <td>508</td>
+      <td>511</td>
+      <td>512</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>NaN</td>
-      <td>Armenia</td>
-      <td>40.06910</td>
-      <td>45.038200</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>990</td>
-      <td>995</td>
-      <td>1004</td>
-      <td>1010</td>
-      <td>1016</td>
-      <td>1020</td>
-      <td>1026</td>
-      <td>1032</td>
-      <td>1039</td>
-      <td>1046</td>
+      <th>264</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>Australian Capital Territory</td>
-      <td>Australia</td>
-      <td>-35.47350</td>
-      <td>149.012400</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
+      <th>265</th>
+      <td>599</td>
+      <td>599</td>
+      <td>599</td>
+      <td>600</td>
+      <td>601</td>
+      <td>601</td>
+      <td>601</td>
+      <td>601</td>
+      <td>602</td>
+      <td>602</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>New South Wales</td>
-      <td>Australia</td>
-      <td>-33.86880</td>
-      <td>151.209300</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
+      <th>266</th>
+      <td>348</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+    </tr>
+    <tr>
+      <th>267</th>
+      <td>242</td>
+      <td>242</td>
+      <td>243</td>
+      <td>243</td>
+      <td>245</td>
+      <td>246</td>
+      <td>248</td>
+      <td>248</td>
+      <td>250</td>
+      <td>251</td>
     </tr>
   </tbody>
 </table>
+</div>
 
 ```python
 confirmed_df.head(10)
