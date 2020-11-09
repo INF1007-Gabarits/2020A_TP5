@@ -14,6 +14,10 @@
 :alarm_clock: [Date de remise le Dimanche 22 novembre 23h59](https://www.timeanddate.com/countdown/generic?iso=20201122T235959&p0=165&msg=Remise+TP5&font=cursive)
 
 ## Directives particulières
+* Le fichier Package.txt contient les packages nécessaires pour ce laboratoire;
+
+* Un fichier main.ipynb est disponible si vous voulez faire le laboratoire sur Jupyter;
+
 * Respecter [guide de codage](https://github.com/INF1007-Gabarits/Guide-codage-python) et les normes pep8;
 
 * Noms de variables et fonctions adéquats (concis, compréhensibles);
@@ -32,7 +36,7 @@ L'une des bases de données la plus largement utilisées aujourd'hui fournissant
 
 ### 1.1. Import des bases de données:
 <p align="justify">
-L'ensemble de données peuvent être directement importé dans des bases de données avec la méthode read_csv de la bibliothèque Pandas. Télécharger les bases de données et les manipuler après n’est pas toujours une bonne pratique, il est préférable d'utiliser les liens qui pointent vers les fichiers CSV archivés sur GitHub, car à mesure que la situation change, il devient plus facile de charger et d'actualiser l'analyse avec de nouvelles données.</p>
+L'ensemble des données peuvent être directement importées dans des bases de données avec la méthode read_csv de la bibliothèque Pandas. Télécharger les bases de données et les manipuler après n’est pas toujours une bonne pratique, il est préférable d'utiliser les liens qui pointent vers les fichiers CSV archivés sur GitHub, car à mesure que la situation change, il devient plus facile de charger et d'actualiser l'analyse avec de nouvelles données.</p>
 
 <p align="justify">
 Durant ce laboratoire, on va travailler avec quatre bases de données, dont les liens URL sont stockés dans la variable: add_death_df, add_confirmed_df, add_recovered_df et add_summary_df.</p>
@@ -47,7 +51,7 @@ ADD_SUMMARY_DF = PATH_1 + 'web-data/data/cases_country.csv'
 ```
 
 <p align="justify">
-La première étape du laboratoire consiste à importer les quatre bases de données. Pour cela on va utiliser la fonction <strong>load_df(...).</strong> Cette fonction a pour objectif d’importer et créer les quatres bases de données à partir des liens URL reçus en paramètre.</p>
+La première étape du laboratoire consiste à importer les quatre bases de données. Pour cela on va utiliser la fonction <strong>load_df(...).</strong> Cette fonction a pour objectif d’importer et créer les quatre bases de données à partir des liens URL reçus en paramètre.</p>
 
 ```python
 [death_df, confirmed_df, recovered_df, summary_df] = dp.load_df(ADD_DEATH_DF, ADD_CONFIRMED_DF, 
@@ -976,7 +980,7 @@ print(summary_df)
 </table>
 
 <p align="justify">
-Les colonnes <strong>Last_Update, Lat, Long_, Incident_Rate, People_Tested, People_Hospitalized, UID	et ISO3</strong>, ne nous seront pas utiles dans notre analyse. Afin de garder que les colonnes qui vont être utile pour notre analyse on va utiliser la fonction <strong>summary_extract_col(...)</strong>, qui extrait les colonnes reçues en paramètre à partir de la base de données summary_df. La fonction retourne la base de données filtrée.</p>
+Les colonnes <strong>Last_Update, Lat, Long_, Incident_Rate, People_Tested, People_Hospitalized, UID	et ISO3</strong>, ne nous seront pas utiles dans notre analyse. Afin de garder que les colonnes qui vont être utiles pour notre analyse on va utiliser la fonction <strong>summary_extract_col(...)</strong>, qui extrait les colonnes reçues en paramètre à partir de la base de données summary_df. La fonction retourne la base de données filtrée.</p>
 
 ```python
 summary_df = dp.summary_extract_col(summary_df, COLUMNS)
@@ -1740,7 +1744,7 @@ print(dict_df_by_country["Recovered"].iloc[:,-9:])
 </table>
 
 
-Finalement, on va ajouter La colonne Active pour l’ensemble des clés du dictionnaire dict_df_by_country. Pour cela on va utiliser la fonction <strong>dict_add_key(...)</strong>.
+Finalement, on va ajouter la colonne Active pour l’ensemble des clés du dictionnaire dict_df_by_country. Pour cela on va utiliser la fonction <strong>dict_add_key(...)</strong>.
 
 ```python
 dict_df_by_country = dp.dict_add_key(dict_df_by_country)
@@ -1911,7 +1915,7 @@ print(dict_df_by_country["Active"].iloc[:,-9:])
 
 
 <p align="justify">
-Aussi, afin de faire une observation de l'évolution de la pandémie en fonction du temps, il nous faut transformer le dictionnaire dict_df en séries temporelles. Cela consistera, entre autres à transposer le dictionnaire dict_df_by_country afin d’avoir les dates en index. Pour cela on va utiliser la fonction <strong>dict_by_day(...)</strong>.</p>
+Aussi, afin de faire une observation de l'évolution de la pandémie en fonction du temps, il nous faut transformer le dictionnaire dict_df en séries temporelles. Cela consistera, entre autres à transposer le dictionnaire dict_df_by_country afin d’avoir les dates en index. Pour cela, on va utiliser la fonction <strong>dict_by_day(...)</strong>.</p>
 
 ```python
 dict_df_by_day = dp.dict_by_day(dict_df_by_country)
@@ -2096,7 +2100,7 @@ wa.countries_bar(summary_df_by_country, COUNTRIES)
 ```
 ![svg](Image/fig_03.svg)
 
-### 2.2. Analyse des donnée des pays:
+### 2.2. Analyse des données des pays:
 La Covid_19 se répand dans le monde entier. L'un des meilleurs moyens de visualiser les données consiste à mapper les données sur la carte du monde. Heureusement, il est facile de créer une carte interactive comme celle ci-dessous.
 ```python
 ca.world_map(dict_df_by_country, "Confirmed", World_PIC)
@@ -2107,7 +2111,7 @@ En utilisant le dictionnaire dict_df_by_country créé précédemment, il est po
 ca.world_cases(dict_df_by_country)
 ```
 ![svg](Image/fig_04.svg)
-Aussi, en utilisant le dictionnaire dict_df_by_date créé précédemment, il est possible de visualiser l’évolution du nombre cumulé des cas confirmés, rétabli, morts, actifs et fermés pour un certain nombre de pays sélectionner. 
+Aussi, en utilisant le dictionnaire dict_df_by_date créé précédemment, il est possible de visualiser l’évolution du nombre cumulé des cas confirmés, rétablis, morts, actifs et fermés pour un certain nombre de pays sélectionner. 
 ```python
 ca.daily_plot_countries(dict_df_by_day, COUNTRIES)
 ```    
@@ -2147,7 +2151,7 @@ ca.weekly_bar(dict_df_by_day, "Canada")
 
 
 ## Partie 3: Modélisation et prévision
-L'analyse terminé, il devient possible de faire une modélisation du profil de l'évolution de la Covid_19 pour un pays, et ainsi faire une projection sur l'évolution de la pandémie.
+L'analyse terminée, il devient possible de faire une modélisation du profil de l'évolution de la Covid_19 pour un pays, et ainsi faire une projection sur l'évolution de la pandémie.
 
 Pour cela on va commencer par la création de nos données d'entrainement, ses données vont servir à entrainer notre modèle et le rendre le plus robuste possible.
 
