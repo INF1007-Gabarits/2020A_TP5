@@ -38,19 +38,19 @@ L'ensemble de données peuvent être directement importé dans des bases de donn
 Durant ce laboratoire, on va travailler avec quatre bases de données, dont les liens URL sont stockés dans la variable: add_death_df, add_confirmed_df, add_recovered_df et add_summary_df.</p>
 
 ```python
-path_1 = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/'
-path_2 = 'master/csse_covid_19_data/csse_covid_19_time_series/'
-add_death_df = path_1 + path_2 + 'time_series_covid19_deaths_global.csv'
-add_confirmed_df = path_1 + path_2 + 'time_series_covid19_confirmed_global.csv'
-add_recovered_df = path_1 + path_2 + 'time_series_covid19_recovered_global.csv'
-add_summary_df = path_1 + 'web-data/data/cases_country.csv'
+PATH_1 = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/'
+PATH_2 = 'master/csse_covid_19_data/csse_covid_19_time_series/'
+ADD_DEATH_DF = PATH_1 + PATH_2 + 'time_series_covid19_deaths_global.csv'
+ADD_CONFIRMED_DF = PATH_1 + PATH_2 + 'time_series_covid19_confirmed_global.csv'
+ADD_RECOVERED_DF = PATH_1 + PATH_2 + 'time_series_covid19_recovered_global.csv'
+ADD_SUMMARY_DF = PATH_1 + 'web-data/data/cases_country.csv'
 ```
 <p align="justify">
 La première étape du laboratoire consiste à importer les quatre bases de données. Pour cela on va utiliser la fonction <strong>load_df(...).</strong> Cette fonction a pour objectif d’importer et créer les quatres bases de données à partir des liens URL reçus en paramètre.</p>
 
 ```python
-[death_df, confirmed_df, recovered_df, summary_df] = dp.load_df(add_death_df, add_confirmed_df, 
-                                                                add_recovered_df, add_summary_df)
+[death_df, confirmed_df, recovered_df, summary_df] = dp.load_df(ADD_DEATH_DF, ADD_CONFIRMED_DF, 
+                                                                ADD_RECOVERED_DF, ADD_SUMMARY_DF)
 ```
 <p align="justify">
 Une fois l’importation des bases de données est effectuée, on doit nous assurer que l’opération s’est bien déroulée. Pour cela on va afficher les 10 dernières colonnes de chaque base de données. Vous trouveriez ci-dessous un aperçu du résultat attendu..</p>
