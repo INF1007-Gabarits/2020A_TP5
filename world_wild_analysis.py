@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import plotly.io as pio
 
 
-def summury_analyse_data(df):
+def summary_analyse_data(df):
     # TO DO: plot the 10 countries with the highest number of confirmed, deaths, active, closed, recovered,
     # and mortality rate
     # TO DO: Créer des subfigure de 3 ligne et 2 colonne de dimension 15*15 en utilisant la bibliothèque Seaborn
@@ -25,7 +25,7 @@ def summury_analyse_data(df):
     fig.show()
 
 
-def summury_secteur(df):
+def summary_secteur(df):
     # TO DO: plot le pourcentage mondial des cas confirmés par pays
     # TO DO: dessiner le pourcentage mondial des cas confirmés par pays en utilisant la bibliothèque plotly.express
 
