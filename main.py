@@ -6,58 +6,60 @@ import world_wild_analysis as wa
 import countries_analysis as ca
 import forcasting_model as fm
 
-Countries = ["Spain", "Canada", "Italy", "China"]
+COUNTRIES = ["Spain", "Canada", "Italy", "China"]
+COLUMNS = ["Country_Region", "Confirmed", "Deaths", "Active", "Closed", "Recovered", "Mortality_Rate"]
 World_PIC = r"World_Map\World_Map.shp"
 
+PATH_1 = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/'
+PATH_2 = 'master/csse_covid_19_data/csse_covid_19_time_series/'
+ADD_DEATH_DF = PATH_1 + PATH_2 + 'time_series_covid19_deaths_global.csv'
+ADD_CONFIRMED_DF = PATH_1 + PATH_2 + 'time_series_covid19_confirmed_global.csv'
+ADD_RECOVERED_DF = PATH_1 + PATH_2 + 'time_series_covid19_recovered_global.csv'
+ADD_SUMMARY_DF = PATH_1 + 'web-data/data/cases_country.csv'
+ 
 if __name__ == '__main__':
 
     # Partie 1: data_processing
-    add_path = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/'
-    add_death_df = add_path + 'csse_covid_19_time_series/time_series_covid19_deaths_global.csv'
-    add_confirmed_df = add_path + 'csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
-    add_recovered_df = add_path + 'csse_covid_19_time_series/time_series_covid19_recovered_global.csv'
-    add_summury_df = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/web-data/data/cases_country.csv'
-
-    [death_df, confirmed_df, recovered_df, summury_df] = dp.load_df(add_death_df, add_confirmed_df, add_recovered_df,
-                                                                    add_summury_df)
-    print("\n Data death_df: \n", death_df.head(10))
-    print("\n Data confirmed_df: \n", confirmed_df.head(10))
-    print("\n Data recovered_df: \n", recovered_df.head(10))
-    print("\n Data summury_df: \n", summury_df.head(10))
+    [death_df, confirmed_df, recovered_df, summary_df] = dp.load_df(ADD_DEATH_DF, ADD_CONFIRMED_DF, ADD_RECOVERED_DF,
+                                                                    ADD_SUMMARY_DF)
+    print("\n Data death_df: \n", death_df.iloc[:,-9:])
+    print("\n Data confirmed_df: \n", confirmed_df.iloc[:,-9:])
+    print("\n Data recovered_df: \n", recovered_df.iloc[:,-9:])
+    print("\n Data summary_df: \n", summary_df)
     
-    summury_df = dp.summury_add_col(summury_df, "Closed", summury_df["Deaths"] + summury_df["Recovered"])
-    print("\n Data summury_df: \n", summury_df.head(10))
+    summary_df = dp.summury_add_col(summary_df, "Closed", summary_df["Deaths"] + summary_df["Recovered"])
+    print("\n Data summary_df: \n", summary_df)
     
     columns = ["Country_Region", "Confirmed", "Deaths", "Active", "Closed", "Recovered", "Mortality_Rate"]
-    summury_df = dp.summury_extract_col(summury_df, columns)
-    print("\n Data summury_df: \n", summury_df.head(10))
+    summary_df = dp.summury_extract_col(summary_df, columns)
+    print("\n Data summary_df: \n", summary_df)
     
-    summury_df_by_country = dp.summury_by_country(summury_df)
-    print("\n Data summury_df_by_country: \n", summury_df_by_country.head(10))
+    summary_df_by_country = dp.summury_by_country(summary_df)
+    print("\n Data summary_df_by_country: \n", summary_df_by_country)
     
     dict_df = dp.creat_dict_df(death_df, confirmed_df, recovered_df)
-    print("\n Data dict_df (Confirmed): \n", dict_df["Confirmed"].head(10))
+    print("\n Data dict_df (Confirmed): \n", dict_df["Confirmed"].iloc[:,-9:])
     
     dict_df = dp.dict_remove_col(dict_df, ["Province/State", "Lat", "Long"])
-    print("\n Data dict_df (Deaths): \n", dict_df["Deaths"].head(10))
+    print("\n Data dict_df (Deaths): \n", dict_df["Deaths"].iloc[:,-9:]))
     
     dict_df_by_country = dp.dict_by_country(dict_df)
-    print("\n Data dict_df (Recovered): \n", dict_df_by_country["Recovered"].head(10))
+    print("\n Data dict_df (Recovered): \n", dict_df_by_country["Recovered"].iloc[:,-9:])
 
     dict_df_by_country = dp.dict_add_key(dict_df_by_country)
-    print("\n Data dict_df (Active): \n", dict_df_by_country["Active"].head(10))
+    print("\n Data dict_df (Active): \n", dict_df_by_country["Active"].iloc[:,-9:])
     
     dict_df_by_day = dp.dict_by_day(dict_df_by_country)
-    print("\n Data dict_df (Closed): \n", dict_df_by_day["Closed"].head(10))
+    print("\n Data dict_df (Closed): \n", dict_df_by_day["Closed"].iloc[:,-9:])
     
-    dp.basic_inf_summury(summury_df)
+    dp.basic_inf_summury(summary_df)
 
     # Partie 2.1: world_wild_analysis
-    wa.summury_analyse_data(summury_df_by_country)
+    wa.summury_analyse_data(summary_df_by_country)
 
-    wa.summury_secteur(summury_df)
+    wa.summury_secteur(summary_df)
 
-    wa.countries_bar(summury_df_by_country, Countries)
+    wa.countries_bar(summary_df_by_country, Countries)
 
     # Partie 2.2: countries_analysis
     ca.world_map(dict_df_by_country, "Confirmed", World_PIC)
