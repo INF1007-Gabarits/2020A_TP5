@@ -1241,7 +1241,7 @@ summary_df_by_country.head(10)
 Finalement, la fonction **basic_inf_summary(...)** va être utilisée pour afficher un sommaire des nombres de cas confirmé, rétabli, mort, actif et fermée dans le monde.
 
 ```python
-Data_Processing.basic_inf_summary(summary_df)  
+dp.basic_inf_summary(summary_df)  
 ```
 <p><strong>Basic Information:</strong><br>
     Total number of Confirmed cases around the world  50395174.0<br>
