@@ -14,13 +14,13 @@
 :alarm_clock: [Date de remise le Dimanche 22 novembre 23h59](https://www.timeanddate.com/countdown/generic?iso=20201122T235959&p0=165&msg=Remise+TP5&font=cursive)
 
 ## Directives particulières
+* Respecter [guide de codage](https://github.com/INF1007-Gabarits/Guide-codage-python) et les normes pep8;
 
+* Noms de variables et fonctions adéquats (concis, compréhensibles);
   
-* Pas de librairies externes autres que celles déjà importées.
+* Pas de librairies externes autres que celles déjà importées;
   
-* <p align="justify"> Dans chaque programme, vous pouvez ajouter d’autres fonctions à celles décrites dans l’énoncé, ainsi que d’autres structures (et sous-structures), pour améliorer la lisibilité et suivre le principe **DRY** (Don’t Repeat Yourself). À chaque endroit où vous remarquez une duplication de code (vous avez écrit les mêmes opérations plus d’une fois) et qu’il n’est pas possible de l’éliminer avec ce qui a été vu en cours, indiquez-le en commentaire.</p>
-
-* <p align="justify"> Afin de vous inciter à écrire du code de qualité, on vous demande d'utiliser les **normes de codage** vue dans le TP3. </p>
+* <p align="justify"> Dans chaque programme, vous pouvez ajouter d’autres fonctions à celles décrites dans l’énoncé, ainsi que d’autres structures (et sous-structures), pour améliorer la lisibilité.</p>
 
 ## Introduction
 <p align="justify">
