@@ -122,7 +122,7 @@ def weekly_bar(dict_df, country):
     # TO DO: Pour l'ensemble des clés du dictionnaire dict_df regrouper les bases de donner par "WeekofYear" pensez a
     # utiliser la fonction week_of_year implémenter précédemment.
 
-    # TO DO: Créer des subfigure de 2 ligne et 2 colonne de dimension 15*10
+    # TO DO: Créer des subfigure de 2 ligne et une colonne de dimension 15*10
 
     # TO DO: Pour chacune des clés du dictionnaire dict_df visualiser l’évolution hebdomadaire
 
