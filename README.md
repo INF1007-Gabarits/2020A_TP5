@@ -48,35 +48,22 @@ add_recovered_df = add_path_1 + add_path_2 + 'time_series_covid19_recovered_glob
 add_summury_df = add_path_1 + 'web-data/data/cases_country.csv'
 ```
 <p align="justify">
-La première étape du laboratoire consiste à importer les quatre bases de données. Pour cela on va utiliser la fonction <strong>Load_df(...).</strong> Cette fonction a pour objectif d’importer et créer les quatres bases de données à partir des liens URL reçus en paramètre.</p>
+La première étape du laboratoire consiste à importer les quatre bases de données. Pour cela on va utiliser la fonction <strong>load_df(...).</strong> Cette fonction a pour objectif d’importer et créer les quatres bases de données à partir des liens URL reçus en paramètre.</p>
 
 ```python
 [death_df, confirmed_df, recovered_df, summury_df] = dp.load_df(add_death_df, add_confirmed_df, 
                                                                 add_recovered_df, add_summury_df)
 ```
 <p align="justify">
-Une fois l’importation des bases de données est effectuée, on doit nous assurer que l’opération s’est bien déroulée. Pour cela on va afficher les 10 premiers éléments de chaque base de données. Vous trouveriez ci-dessous un aperçu du résultat attendu.</p>
+Une fois l’importation des bases de données est effectuée, on doit nous assurer que l’opération s’est bien déroulée. Pour cela on va afficher les 10 dernières colonnes de chaque base de données. Vous trouveriez ci-dessous un aperçu du résultat attendu..</p>
 
 ```python
-print(death_df)
+print(death_df.iloc[:,-9:])
 ```
-
 <table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Province/State</th>
-      <th>Country/Region</th>
-      <th>Lat</th>
-      <th>Long</th>
-      <th>1/22/20</th>
-      <th>1/23/20</th>
-      <th>1/24/20</th>
-      <th>1/25/20</th>
-      <th>1/26/20</th>
-      <th>1/27/20</th>
-      <th>...</th>
-      <th>10/29/20</th>
       <th>10/30/20</th>
       <th>10/31/20</th>
       <th>11/1/20</th>
@@ -91,18 +78,6 @@ print(death_df)
   <tbody>
     <tr>
       <th>0</th>
-      <td>NaN</td>
-      <td>Afghanistan</td>
-      <td>33.939110</td>
-      <td>67.709953</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1532</td>
       <td>1533</td>
       <td>1536</td>
       <td>1536</td>
@@ -115,18 +90,6 @@ print(death_df)
     </tr>
     <tr>
       <th>1</th>
-      <td>NaN</td>
-      <td>Albania</td>
-      <td>41.153300</td>
-      <td>20.168300</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>499</td>
       <td>502</td>
       <td>509</td>
       <td>518</td>
@@ -139,18 +102,6 @@ print(death_df)
     </tr>
     <tr>
       <th>2</th>
-      <td>NaN</td>
-      <td>Algeria</td>
-      <td>28.033900</td>
-      <td>1.659600</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1949</td>
       <td>1956</td>
       <td>1964</td>
       <td>1973</td>
@@ -163,18 +114,6 @@ print(death_df)
     </tr>
     <tr>
       <th>3</th>
-      <td>NaN</td>
-      <td>Andorra</td>
-      <td>42.506300</td>
-      <td>1.521800</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>73</td>
       <td>75</td>
       <td>75</td>
       <td>75</td>
@@ -187,18 +126,6 @@ print(death_df)
     </tr>
     <tr>
       <th>4</th>
-      <td>NaN</td>
-      <td>Angola</td>
-      <td>-11.202700</td>
-      <td>17.873900</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>275</td>
       <td>279</td>
       <td>284</td>
       <td>286</td>
@@ -220,33 +147,9 @@ print(death_df)
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>263</th>
-      <td>NaN</td>
-      <td>West Bank and Gaza</td>
-      <td>31.952200</td>
-      <td>35.233200</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>473</td>
       <td>481</td>
       <td>483</td>
       <td>489</td>
@@ -259,18 +162,6 @@ print(death_df)
     </tr>
     <tr>
       <th>264</th>
-      <td>NaN</td>
-      <td>Western Sahara</td>
-      <td>24.215500</td>
-      <td>-12.885800</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1</td>
       <td>1</td>
       <td>1</td>
       <td>1</td>
@@ -283,18 +174,6 @@ print(death_df)
     </tr>
     <tr>
       <th>265</th>
-      <td>NaN</td>
-      <td>Yemen</td>
-      <td>15.552727</td>
-      <td>48.516388</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>599</td>
       <td>599</td>
       <td>599</td>
       <td>600</td>
@@ -307,18 +186,6 @@ print(death_df)
     </tr>
     <tr>
       <th>266</th>
-      <td>NaN</td>
-      <td>Zambia</td>
-      <td>-13.133897</td>
-      <td>27.849332</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>348</td>
       <td>349</td>
       <td>349</td>
       <td>349</td>
@@ -331,18 +198,6 @@ print(death_df)
     </tr>
     <tr>
       <th>267</th>
-      <td>NaN</td>
-      <td>Zimbabwe</td>
-      <td>-19.015438</td>
-      <td>29.154857</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>242</td>
       <td>242</td>
       <td>243</td>
       <td>243</td>
@@ -357,24 +212,12 @@ print(death_df)
 </table>
 
 ```python
-print(confirmed_df)
+print(confirmed_df.iloc[:,-9:])
 ```
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Province/State</th>
-      <th>Country/Region</th>
-      <th>Lat</th>
-      <th>Long</th>
-      <th>1/22/20</th>
-      <th>1/23/20</th>
-      <th>1/24/20</th>
-      <th>1/25/20</th>
-      <th>1/26/20</th>
-      <th>1/27/20</th>
-      <th>...</th>
-      <th>10/29/20</th>
       <th>10/30/20</th>
       <th>10/31/20</th>
       <th>11/1/20</th>
@@ -389,18 +232,6 @@ print(confirmed_df)
   <tbody>
     <tr>
       <th>0</th>
-      <td>NaN</td>
-      <td>Afghanistan</td>
-      <td>33.939110</td>
-      <td>67.709953</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>41268</td>
       <td>41334</td>
       <td>41425</td>
       <td>41501</td>
@@ -413,18 +244,6 @@ print(confirmed_df)
     </tr>
     <tr>
       <th>1</th>
-      <td>NaN</td>
-      <td>Albania</td>
-      <td>41.153300</td>
-      <td>20.168300</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>20315</td>
       <td>20634</td>
       <td>20875</td>
       <td>21202</td>
@@ -437,18 +256,6 @@ print(confirmed_df)
     </tr>
     <tr>
       <th>2</th>
-      <td>NaN</td>
-      <td>Algeria</td>
-      <td>28.033900</td>
-      <td>1.659600</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>57332</td>
       <td>57651</td>
       <td>57942</td>
       <td>58272</td>
@@ -461,18 +268,6 @@ print(confirmed_df)
     </tr>
     <tr>
       <th>3</th>
-      <td>NaN</td>
-      <td>Andorra</td>
-      <td>42.506300</td>
-      <td>1.521800</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>4567</td>
       <td>4665</td>
       <td>4756</td>
       <td>4825</td>
@@ -485,18 +280,6 @@ print(confirmed_df)
     </tr>
     <tr>
       <th>4</th>
-      <td>NaN</td>
-      <td>Angola</td>
-      <td>-11.202700</td>
-      <td>17.873900</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>10269</td>
       <td>10558</td>
       <td>10805</td>
       <td>11035</td>
@@ -518,33 +301,9 @@ print(confirmed_df)
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>263</th>
-      <td>NaN</td>
-      <td>West Bank and Gaza</td>
-      <td>31.952200</td>
-      <td>35.233200</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>52571</td>
       <td>53075</td>
       <td>53520</td>
       <td>54060</td>
@@ -557,18 +316,6 @@ print(confirmed_df)
     </tr>
     <tr>
       <th>264</th>
-      <td>NaN</td>
-      <td>Western Sahara</td>
-      <td>24.215500</td>
-      <td>-12.885800</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>10</td>
       <td>10</td>
       <td>10</td>
       <td>10</td>
@@ -581,18 +328,6 @@ print(confirmed_df)
     </tr>
     <tr>
       <th>265</th>
-      <td>NaN</td>
-      <td>Yemen</td>
-      <td>15.552727</td>
-      <td>48.516388</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2062</td>
       <td>2062</td>
       <td>2063</td>
       <td>2063</td>
@@ -605,18 +340,6 @@ print(confirmed_df)
     </tr>
     <tr>
       <th>266</th>
-      <td>NaN</td>
-      <td>Zambia</td>
-      <td>-13.133897</td>
-      <td>27.849332</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>16325</td>
       <td>16415</td>
       <td>16432</td>
       <td>16480</td>
@@ -629,18 +352,6 @@ print(confirmed_df)
     </tr>
     <tr>
       <th>267</th>
-      <td>NaN</td>
-      <td>Zimbabwe</td>
-      <td>-19.015438</td>
-      <td>29.154857</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>8349</td>
       <td>8362</td>
       <td>8367</td>
       <td>8374</td>
@@ -655,25 +366,13 @@ print(confirmed_df)
 </table>
 
 ```python
-print(recovered_df)
+print(recovered_df.iloc[:,-9:])
 ```
 
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Province/State</th>
-      <th>Country/Region</th>
-      <th>Lat</th>
-      <th>Long</th>
-      <th>1/22/20</th>
-      <th>1/23/20</th>
-      <th>1/24/20</th>
-      <th>1/25/20</th>
-      <th>1/26/20</th>
-      <th>1/27/20</th>
-      <th>...</th>
-      <th>10/29/20</th>
       <th>10/30/20</th>
       <th>10/31/20</th>
       <th>11/1/20</th>
@@ -688,18 +387,6 @@ print(recovered_df)
   <tbody>
     <tr>
       <th>0</th>
-      <td>NaN</td>
-      <td>Afghanistan</td>
-      <td>33.939110</td>
-      <td>67.709953</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>34239</td>
       <td>34258</td>
       <td>34321</td>
       <td>34326</td>
@@ -712,18 +399,6 @@ print(recovered_df)
     </tr>
     <tr>
       <th>1</th>
-      <td>NaN</td>
-      <td>Albania</td>
-      <td>41.153300</td>
-      <td>20.168300</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>11007</td>
       <td>11097</td>
       <td>11189</td>
       <td>11246</td>
@@ -736,18 +411,6 @@ print(recovered_df)
     </tr>
     <tr>
       <th>2</th>
-      <td>NaN</td>
-      <td>Algeria</td>
-      <td>28.033900</td>
-      <td>1.659600</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>39635</td>
       <td>40014</td>
       <td>40201</td>
       <td>40395</td>
@@ -760,18 +423,6 @@ print(recovered_df)
     </tr>
     <tr>
       <th>3</th>
-      <td>NaN</td>
-      <td>Andorra</td>
-      <td>42.506300</td>
-      <td>1.521800</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>3260</td>
       <td>3377</td>
       <td>3475</td>
       <td>3475</td>
@@ -784,18 +435,6 @@ print(recovered_df)
     </tr>
     <tr>
       <th>4</th>
-      <td>NaN</td>
-      <td>Angola</td>
-      <td>-11.202700</td>
-      <td>17.873900</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>3736</td>
       <td>4107</td>
       <td>4523</td>
       <td>4920</td>
@@ -817,33 +456,9 @@ print(recovered_df)
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>250</th>
-      <td>NaN</td>
-      <td>West Bank and Gaza</td>
-      <td>31.952200</td>
-      <td>35.233200</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>45448</td>
       <td>45896</td>
       <td>46309</td>
       <td>46773</td>
@@ -856,18 +471,6 @@ print(recovered_df)
     </tr>
     <tr>
       <th>251</th>
-      <td>NaN</td>
-      <td>Western Sahara</td>
-      <td>24.215500</td>
-      <td>-12.885800</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>8</td>
       <td>8</td>
       <td>8</td>
       <td>8</td>
@@ -880,18 +483,6 @@ print(recovered_df)
     </tr>
     <tr>
       <th>252</th>
-      <td>NaN</td>
-      <td>Yemen</td>
-      <td>15.552727</td>
-      <td>48.516388</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1366</td>
       <td>1366</td>
       <td>1366</td>
       <td>1366</td>
@@ -904,18 +495,6 @@ print(recovered_df)
     </tr>
     <tr>
       <th>253</th>
-      <td>NaN</td>
-      <td>Zambia</td>
-      <td>-13.133897</td>
-      <td>27.849332</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>15585</td>
       <td>15600</td>
       <td>15680</td>
       <td>15733</td>
@@ -928,18 +507,6 @@ print(recovered_df)
     </tr>
     <tr>
       <th>254</th>
-      <td>NaN</td>
-      <td>Zimbabwe</td>
-      <td>-19.015438</td>
-      <td>29.154857</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>7864</td>
       <td>7884</td>
       <td>7894</td>
       <td>7927</td>
@@ -956,72 +523,122 @@ print(recovered_df)
 ```python
 print(summary_df)
 ```
-<table border="1" class="dataframe">
+</style>
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
       <th>Country_Region</th>
+      <th>Last_Update</th>
+      <th>Lat</th>
+      <th>Long_</th>
       <th>Confirmed</th>
       <th>Deaths</th>
-      <th>Active</th>
-      <th>Closed</th>
       <th>Recovered</th>
+      <th>Active</th>
+      <th>Incident_Rate</th>
+      <th>People_Tested</th>
+      <th>People_Hospitalized</th>
       <th>Mortality_Rate</th>
+      <th>UID</th>
+      <th>ISO3</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>Afghanistan</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>33.939110</td>
+      <td>67.709953</td>
       <td>42092.0</td>
       <td>1558.0</td>
-      <td>6076.0</td>
-      <td>36016.0</td>
       <td>34458.0</td>
+      <td>6076.0</td>
+      <td>108.126879</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>3.701416</td>
+      <td>4</td>
+      <td>AFG</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Albania</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>41.153300</td>
+      <td>20.168300</td>
       <td>24206.0</td>
       <td>559.0</td>
-      <td>11555.0</td>
-      <td>12651.0</td>
       <td>12092.0</td>
+      <td>11555.0</td>
+      <td>841.128640</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>2.309345</td>
+      <td>8</td>
+      <td>ALB</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Algeria</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>28.033900</td>
+      <td>1.659600</td>
       <td>62051.0</td>
       <td>2048.0</td>
-      <td>17966.0</td>
-      <td>44085.0</td>
       <td>42037.0</td>
+      <td>17966.0</td>
+      <td>141.504046</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>3.300511</td>
+      <td>12</td>
+      <td>DZA</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Andorra</td>
-      <td>5319.0</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>42.506300</td>
+      <td>1.521800</td>
+      <td>5383.0</td>
       <td>75.0</td>
-      <td>1201.0</td>
-      <td>4118.0</td>
-      <td>4043.0</td>
-      <td>1.410039</td>
+      <td>4248.0</td>
+      <td>1060.0</td>
+      <td>6966.931987</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.393275</td>
+      <td>20</td>
+      <td>AND</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Angola</td>
-      <td>12335.0</td>
-      <td>303.0</td>
-      <td>6385.0</td>
-      <td>5950.0</td>
-      <td>5647.0</td>
-      <td>2.456425</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>-11.202700</td>
+      <td>17.873900</td>
+      <td>12433.0</td>
+      <td>307.0</td>
+      <td>5899.0</td>
+      <td>6227.0</td>
+      <td>37.829059</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.469235</td>
+      <td>24</td>
+      <td>AGO</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -1033,52 +650,87 @@ print(summary_df)
     <tr>
       <th>185</th>
       <td>West Bank and Gaza</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>31.952200</td>
+      <td>35.233200</td>
       <td>58158.0</td>
       <td>515.0</td>
-      <td>7236.0</td>
-      <td>50922.0</td>
       <td>50407.0</td>
+      <td>7236.0</td>
+      <td>1140.036413</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0.885519</td>
+      <td>275</td>
+      <td>PSE</td>
     </tr>
     <tr>
       <th>186</th>
       <td>Western Sahara</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>24.215500</td>
+      <td>-12.885800</td>
       <td>10.0</td>
       <td>1.0</td>
-      <td>1.0</td>
-      <td>9.0</td>
       <td>8.0</td>
+      <td>1.0</td>
+      <td>1.674116</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>10.000000</td>
+      <td>732</td>
+      <td>ESH</td>
     </tr>
     <tr>
       <th>187</th>
       <td>Yemen</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>15.552727</td>
+      <td>48.516388</td>
       <td>2070.0</td>
       <td>602.0</td>
-      <td>93.0</td>
-      <td>1977.0</td>
       <td>1375.0</td>
+      <td>93.0</td>
+      <td>6.940261</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>29.082126</td>
+      <td>887</td>
+      <td>YEM</td>
     </tr>
     <tr>
       <th>188</th>
       <td>Zambia</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>-13.133897</td>
+      <td>27.849332</td>
       <td>16954.0</td>
       <td>349.0</td>
-      <td>655.0</td>
-      <td>16299.0</td>
       <td>15950.0</td>
+      <td>655.0</td>
+      <td>92.221718</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>2.058511</td>
+      <td>894</td>
+      <td>ZMB</td>
     </tr>
     <tr>
       <th>189</th>
       <td>Zimbabwe</td>
-      <td>8498.0</td>
-      <td>251.0</td>
-      <td>252.0</td>
-      <td>8246.0</td>
-      <td>7995.0</td>
-      <td>2.953636</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>-19.015438</td>
+      <td>29.154857</td>
+      <td>8531.0</td>
+      <td>253.0</td>
+      <td>8005.0</td>
+      <td>273.0</td>
+      <td>57.397846</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.965655</td>
+      <td>716</td>
+      <td>ZWE</td>
     </tr>
   </tbody>
 </table>
@@ -1093,14 +745,14 @@ Les bases de données importées précédemment se divisent en deux catégories 
 
 #### 1.2.1. Prétraitement des données mondial:
 <p align="justify">
-La première transformation qu’on va apporter à la base de données summary_df, consiste à ajouter une colonne au nom de <strong>"Closed"</strong>, qui correspond au nombre de cas fermé dans chaque pays. Pour cela on va utiliser la fonction <strong>summaryaddcol(...)</strong>, qui ajoute une colonne à la base de données df reçue en paramètre, le nom et la valeur de cette colonne se trouve respectivement dans les variables col et value. La fonction retourne la nouvelle base de données.</p>
+La première transformation qu’on va apporter à la base de données summary_df, consiste à ajouter une colonne au nom de <strong>"Closed"</strong>, qui correspond au nombre de cas fermé dans chaque pays. Pour cela on va utiliser la fonction <strong>summary_add_col(...)</strong>, qui ajoute une colonne à la base de données df reçue en paramètre, le nom et la valeur de cette colonne se trouve respectivement dans les variables col et value. La fonction retourne la nouvelle base de données.</p>
 
 ```python
 summary_df = dp.summury_add_col(summury_df, "Closed", summury_df["Deaths"] + summury_df["Recovered"])
 print(summary_df)
 ```
 
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1125,188 +777,206 @@ print(summary_df)
     <tr>
       <th>0</th>
       <td>Afghanistan</td>
-      <td>2020-10-16 16:24:04</td>
-      <td>33.93911</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>33.939110</td>
       <td>67.709953</td>
-      <td>40073.0</td>
-      <td>1485.0</td>
-      <td>33516.0</td>
-      <td>5072.0</td>
-      <td>102.940426</td>
+      <td>42092.0</td>
+      <td>1558.0</td>
+      <td>34458.0</td>
+      <td>6076.0</td>
+      <td>108.126879</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.705737</td>
+      <td>3.701416</td>
       <td>4</td>
       <td>AFG</td>
-      <td>35001.0</td>
+      <td>36016.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Albania</td>
-      <td>2020-10-16 16:24:04</td>
-      <td>41.15330</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>41.153300</td>
       <td>20.168300</td>
-      <td>16501.0</td>
-      <td>443.0</td>
-      <td>9957.0</td>
-      <td>6101.0</td>
-      <td>573.389395</td>
+      <td>24206.0</td>
+      <td>559.0</td>
+      <td>12092.0</td>
+      <td>11555.0</td>
+      <td>841.128640</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.684686</td>
+      <td>2.309345</td>
       <td>8</td>
       <td>ALB</td>
-      <td>10400.0</td>
+      <td>12651.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Algeria</td>
-      <td>2020-10-16 16:24:04</td>
-      <td>28.03390</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>28.033900</td>
       <td>1.659600</td>
-      <td>53777.0</td>
-      <td>1827.0</td>
-      <td>37603.0</td>
-      <td>14347.0</td>
-      <td>122.635624</td>
+      <td>62051.0</td>
+      <td>2048.0</td>
+      <td>42037.0</td>
+      <td>17966.0</td>
+      <td>141.504046</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.397363</td>
+      <td>3.300511</td>
       <td>12</td>
       <td>DZA</td>
-      <td>39430.0</td>
+      <td>44085.0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Andorra</td>
-      <td>2020-10-16 16:24:04</td>
-      <td>42.50630</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>42.506300</td>
       <td>1.521800</td>
-      <td>3377.0</td>
-      <td>59.0</td>
-      <td>2057.0</td>
-      <td>1261.0</td>
-      <td>4370.672361</td>
+      <td>5383.0</td>
+      <td>75.0</td>
+      <td>4248.0</td>
+      <td>1060.0</td>
+      <td>6966.931987</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.747113</td>
+      <td>1.393275</td>
       <td>20</td>
       <td>AND</td>
-      <td>2116.0</td>
+      <td>4323.0</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Angola</td>
-      <td>2020-10-16 16:24:04</td>
-      <td>-11.20270</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>-11.202700</td>
       <td>17.873900</td>
-      <td>7096.0</td>
-      <td>228.0</td>
-      <td>2928.0</td>
-      <td>3940.0</td>
-      <td>21.590526</td>
+      <td>12433.0</td>
+      <td>307.0</td>
+      <td>5899.0</td>
+      <td>6227.0</td>
+      <td>37.829059</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.213078</td>
+      <td>2.469235</td>
       <td>24</td>
       <td>AGO</td>
-      <td>3156.0</td>
+      <td>6206.0</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>Antigua and Barbuda</td>
-      <td>2020-10-16 16:24:04</td>
-      <td>17.06080</td>
-      <td>-61.796400</td>
-      <td>112.0</td>
-      <td>3.0</td>
-      <td>100.0</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>West Bank and Gaza</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>31.952200</td>
+      <td>35.233200</td>
+      <td>58158.0</td>
+      <td>515.0</td>
+      <td>50407.0</td>
+      <td>7236.0</td>
+      <td>1140.036413</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.885519</td>
+      <td>275</td>
+      <td>PSE</td>
+      <td>50922.0</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Western Sahara</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>24.215500</td>
+      <td>-12.885800</td>
+      <td>10.0</td>
+      <td>1.0</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>1.674116</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10.000000</td>
+      <td>732</td>
+      <td>ESH</td>
       <td>9.0</td>
-      <td>114.369741</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2.678571</td>
-      <td>28</td>
-      <td>ATG</td>
-      <td>103.0</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>Argentina</td>
-      <td>2020-10-16 16:24:04</td>
-      <td>-38.41610</td>
-      <td>-63.616700</td>
-      <td>949063.0</td>
-      <td>25342.0</td>
-      <td>764859.0</td>
-      <td>158862.0</td>
-      <td>2099.893094</td>
+      <th>187</th>
+      <td>Yemen</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>15.552727</td>
+      <td>48.516388</td>
+      <td>2070.0</td>
+      <td>602.0</td>
+      <td>1375.0</td>
+      <td>93.0</td>
+      <td>6.940261</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.670213</td>
-      <td>32</td>
-      <td>ARG</td>
-      <td>790201.0</td>
+      <td>29.082126</td>
+      <td>887</td>
+      <td>YEM</td>
+      <td>1977.0</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>Armenia</td>
-      <td>2020-10-16 16:24:04</td>
-      <td>40.06910</td>
-      <td>45.038200</td>
-      <td>61460.0</td>
-      <td>1056.0</td>
-      <td>47541.0</td>
-      <td>12863.0</td>
-      <td>2074.085273</td>
+      <th>188</th>
+      <td>Zambia</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>-13.133897</td>
+      <td>27.849332</td>
+      <td>16954.0</td>
+      <td>349.0</td>
+      <td>15950.0</td>
+      <td>655.0</td>
+      <td>92.221718</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.718191</td>
-      <td>51</td>
-      <td>ARM</td>
-      <td>48597.0</td>
+      <td>2.058511</td>
+      <td>894</td>
+      <td>ZMB</td>
+      <td>16299.0</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>Australia</td>
-      <td>2020-10-16 16:24:04</td>
-      <td>-25.00000</td>
-      <td>133.000000</td>
-      <td>27371.0</td>
-      <td>904.0</td>
-      <td>25089.0</td>
-      <td>1378.0</td>
-      <td>107.507158</td>
+      <th>189</th>
+      <td>Zimbabwe</td>
+      <td>2020-11-09 04:25:30</td>
+      <td>-19.015438</td>
+      <td>29.154857</td>
+      <td>8531.0</td>
+      <td>253.0</td>
+      <td>8005.0</td>
+      <td>273.0</td>
+      <td>57.397846</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.302766</td>
-      <td>36</td>
-      <td>AUS</td>
-      <td>25993.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Austria</td>
-      <td>2020-10-16 16:24:04</td>
-      <td>47.51620</td>
-      <td>14.550100</td>
-      <td>61387.0</td>
-      <td>882.0</td>
-      <td>47618.0</td>
-      <td>12887.0</td>
-      <td>681.593089</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.436786</td>
-      <td>40</td>
-      <td>AUT</td>
-      <td>48500.0</td>
+      <td>2.965655</td>
+      <td>716</td>
+      <td>ZWE</td>
+      <td>8258.0</td>
     </tr>
   </tbody>
 </table>
 
 <p align="justify">
-Les colonnes <strong>Last_Update, Lat, Long_, Incident_Rate, People_Tested, People_Hospitalized, UID	et ISO3</strong>, ne nous seront pas utiles dans notre analyse. Afin de garder que les colonnes qui vont être utile pour notre analyse on va utiliser la fonction <strong>summaryextractcol(...)</strong>, qui extrait les colonnes reçues en paramètre à partir de la base de données summary_df. La fonction retourne la base de données filtrée.</p>
+Les colonnes <strong>Last_Update, Lat, Long_, Incident_Rate, People_Tested, People_Hospitalized, UID	et ISO3</strong>, ne nous seront pas utiles dans notre analyse. Afin de garder que les colonnes qui vont être utile pour notre analyse on va utiliser la fonction <strong>summary_extract_col(...)</strong>, qui extrait les colonnes reçues en paramètre à partir de la base de données summary_df. La fonction retourne la base de données filtrée.</p>
 
 ```python
 summury_df = dp.summury_extract_col(summury_df, COLUMNS)
@@ -1359,22 +1029,22 @@ print(summary_df)
     <tr>
       <th>3</th>
       <td>Andorra</td>
-      <td>5319.0</td>
+      <td>5383.0</td>
       <td>75.0</td>
-      <td>1201.0</td>
-      <td>4118.0</td>
-      <td>4043.0</td>
-      <td>1.410039</td>
+      <td>1060.0</td>
+      <td>4323.0</td>
+      <td>4248.0</td>
+      <td>1.393275</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Angola</td>
-      <td>12335.0</td>
-      <td>303.0</td>
-      <td>6385.0</td>
-      <td>5950.0</td>
-      <td>5647.0</td>
-      <td>2.456425</td>
+      <td>12433.0</td>
+      <td>307.0</td>
+      <td>6227.0</td>
+      <td>6206.0</td>
+      <td>5899.0</td>
+      <td>2.469235</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1429,21 +1099,21 @@ print(summary_df)
     <tr>
       <th>189</th>
       <td>Zimbabwe</td>
-      <td>8498.0</td>
-      <td>251.0</td>
-      <td>252.0</td>
-      <td>8246.0</td>
-      <td>7995.0</td>
-      <td>2.953636</td>
+      <td>8531.0</td>
+      <td>253.0</td>
+      <td>273.0</td>
+      <td>8258.0</td>
+      <td>8005.0</td>
+      <td>2.965655</td>
     </tr>
   </tbody>
 </table>
 
 <p align="justify">
-Afin de faire une observation en fonction des pays, il nous faut regrouper notre base de données en fonction des pays. Pour cela on va utiliser la fonction <strong>summarybycountry(...)</strong>. Pensez à utiliser la méthode groupby().</p>
+Afin de faire une observation en fonction des pays, il nous faut regrouper notre base de données en fonction des pays. Pour cela on va utiliser la fonction <strong>summary_by_country(...)</strong>. Pensez à utiliser la méthode groupby().</p>
 
 ```python
-summary_df_by_country = Data_Processing.summarybycountry(summary_df)
+summary_df_by_country = dp.summary_by_country(summary_df)
 summary_df_by_country.head(10)
 ```
 <table border="1" class="dataframe">
@@ -1470,1297 +1140,788 @@ summary_df_by_country.head(10)
   <tbody>
     <tr>
       <th>Afghanistan</th>
-      <td>40073.0</td>
-      <td>1485.0</td>
-      <td>5072.0</td>
-      <td>35001.0</td>
-      <td>33516.0</td>
-      <td>3.705737</td>
+      <td>42092.0</td>
+      <td>1558.0</td>
+      <td>6076.0</td>
+      <td>36016.0</td>
+      <td>34458.0</td>
+      <td>3.701416</td>
     </tr>
     <tr>
       <th>Albania</th>
-      <td>16501.0</td>
-      <td>443.0</td>
-      <td>6101.0</td>
-      <td>10400.0</td>
-      <td>9957.0</td>
-      <td>2.684686</td>
+      <td>24206.0</td>
+      <td>559.0</td>
+      <td>11555.0</td>
+      <td>12651.0</td>
+      <td>12092.0</td>
+      <td>2.309345</td>
     </tr>
     <tr>
       <th>Algeria</th>
-      <td>53777.0</td>
-      <td>1827.0</td>
-      <td>14347.0</td>
-      <td>39430.0</td>
-      <td>37603.0</td>
-      <td>3.397363</td>
+      <td>62051.0</td>
+      <td>2048.0</td>
+      <td>17966.0</td>
+      <td>44085.0</td>
+      <td>42037.0</td>
+      <td>3.300511</td>
     </tr>
     <tr>
       <th>Andorra</th>
-      <td>3377.0</td>
-      <td>59.0</td>
-      <td>1261.0</td>
-      <td>2116.0</td>
-      <td>2057.0</td>
-      <td>1.747113</td>
+      <td>5383.0</td>
+      <td>75.0</td>
+      <td>1060.0</td>
+      <td>4323.0</td>
+      <td>4248.0</td>
+      <td>1.393275</td>
     </tr>
     <tr>
       <th>Angola</th>
-      <td>7096.0</td>
-      <td>228.0</td>
-      <td>3940.0</td>
-      <td>3156.0</td>
-      <td>2928.0</td>
-      <td>3.213078</td>
+      <td>12433.0</td>
+      <td>307.0</td>
+      <td>6227.0</td>
+      <td>6206.0</td>
+      <td>5899.0</td>
+      <td>2.469235</td>
     </tr>
     <tr>
-      <th>Antigua and Barbuda</th>
-      <td>112.0</td>
-      <td>3.0</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>West Bank and Gaza</th>
+      <td>58158.0</td>
+      <td>515.0</td>
+      <td>7236.0</td>
+      <td>50922.0</td>
+      <td>50407.0</td>
+      <td>0.885519</td>
+    </tr>
+    <tr>
+      <th>Western Sahara</th>
+      <td>10.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
       <td>9.0</td>
-      <td>103.0</td>
-      <td>100.0</td>
-      <td>2.678571</td>
+      <td>8.0</td>
+      <td>10.000000</td>
     </tr>
     <tr>
-      <th>Argentina</th>
-      <td>949063.0</td>
-      <td>25342.0</td>
-      <td>158862.0</td>
-      <td>790201.0</td>
-      <td>764859.0</td>
-      <td>2.670213</td>
+      <th>Yemen</th>
+      <td>2070.0</td>
+      <td>602.0</td>
+      <td>93.0</td>
+      <td>1977.0</td>
+      <td>1375.0</td>
+      <td>29.082126</td>
     </tr>
     <tr>
-      <th>Armenia</th>
-      <td>61460.0</td>
-      <td>1056.0</td>
-      <td>12863.0</td>
-      <td>48597.0</td>
-      <td>47541.0</td>
-      <td>1.718191</td>
+      <th>Zambia</th>
+      <td>16954.0</td>
+      <td>349.0</td>
+      <td>655.0</td>
+      <td>16299.0</td>
+      <td>15950.0</td>
+      <td>2.058511</td>
     </tr>
     <tr>
-      <th>Australia</th>
-      <td>27371.0</td>
-      <td>904.0</td>
-      <td>1378.0</td>
-      <td>25993.0</td>
-      <td>25089.0</td>
-      <td>3.302766</td>
-    </tr>
-    <tr>
-      <th>Austria</th>
-      <td>61387.0</td>
-      <td>882.0</td>
-      <td>12887.0</td>
-      <td>48500.0</td>
-      <td>47618.0</td>
-      <td>1.436786</td>
+      <th>Zimbabwe</th>
+      <td>8531.0</td>
+      <td>253.0</td>
+      <td>273.0</td>
+      <td>8258.0</td>
+      <td>8005.0</td>
+      <td>2.965655</td>
     </tr>
   </tbody>
 </table>
 
-Finalement, la fonction **basicinfsummary(...)** va être utilisée pour afficher un sommaire des nombres de cas confirmé, rétabli, mort, actif et fermée dans le monde.
+Finalement, la fonction **basic_inf_summary(...)** va être utilisée pour afficher un sommaire des nombres de cas confirmé, rétabli, mort, actif et fermée dans le monde.
 
 ```python
-Data_Processing.basicinfsummary(summary_df)  
+Data_Processing.basic_inf_summary(summary_df)  
 ```
 <p><strong>Basic Information:</strong><br>
-    Total number of Confirmed cases around the world:  39068667<br>
-    Total number of Recovered cases around the world:  26950302<br>
-    Total number of Deaths cases around the world:  1100364<br>
-    Total number of Active cases around the world:  11018420<br>
-    Total number of Closed cases around the world:  28043974</p>  
+    Total number of Confirmed cases around the world  50395174.0<br>
+    Total number of Recovered cases around the world  33032762.0<br>
+    Total number of Deaths cases around the world  1256177.0<br>
+    Total number of Active cases around the world  16074451.0<br>
+    Total number of Closed cases around the world  34282025.0<br>
 
 #### 1.2.2. Prétraitement des données des Pays:
 <p align="justify">
-Pour rendre la manipulation des bases de données <strong>death_df, confirmed_df et recovered_df</strong> plus simple, on va créer un dictionnaire de ses bases de données. Pour ce faire, on va utiliser la fonction <strong>creatdictdf(…)</strong> qui va créer un dictionnaire à partir des bases de données reçues en paramètre, avec leurs noms respectifs comme clés.</p>
+Pour rendre la manipulation des bases de données <strong>death_df, confirmed_df et recovered_df</strong> plus simple, on va créer un dictionnaire de ses bases de données. Pour ce faire, on va utiliser la fonction <strong>creat_dict_df(…)</strong> qui va créer un dictionnaire à partir des bases de données reçues en paramètre, avec leurs noms respectifs comme clés.</p>
 
 ```python
-dict_df = Data_Processing.creatdictdf(death_df,confirmed_df,recovered_df)
-dict_df["Confirmed"].head(10)
+dict_df = dp.creat_dict_df(death_df,confirmed_df,recovered_df)
+print(dict_df["Confirmed"].iloc[:,-9:])
 ```
-
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Province/State</th>
-      <th>Country/Region</th>
-      <th>Lat</th>
-      <th>Long</th>
-      <th>1/22/20</th>
-      <th>1/23/20</th>
-      <th>1/24/20</th>
-      <th>1/25/20</th>
-      <th>1/26/20</th>
-      <th>1/27/20</th>
-      <th>...</th>
-      <th>10/6/20</th>
-      <th>10/7/20</th>
-      <th>10/8/20</th>
-      <th>10/9/20</th>
-      <th>10/10/20</th>
-      <th>10/11/20</th>
-      <th>10/12/20</th>
-      <th>10/13/20</th>
-      <th>10/14/20</th>
-      <th>10/15/20</th>
+      <th>10/30/20</th>
+      <th>10/31/20</th>
+      <th>11/1/20</th>
+      <th>11/2/20</th>
+      <th>11/3/20</th>
+      <th>11/4/20</th>
+      <th>11/5/20</th>
+      <th>11/6/20</th>
+      <th>11/7/20</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>NaN</td>
-      <td>Afghanistan</td>
-      <td>33.93911</td>
-      <td>67.709953</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>39486</td>
-      <td>39548</td>
-      <td>39616</td>
-      <td>39693</td>
-      <td>39703</td>
-      <td>39799</td>
-      <td>39870</td>
-      <td>39928</td>
-      <td>39994</td>
-      <td>40026</td>
+      <td>41334</td>
+      <td>41425</td>
+      <td>41501</td>
+      <td>41633</td>
+      <td>41728</td>
+      <td>41814</td>
+      <td>41935</td>
+      <td>41975</td>
+      <td>42033</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>NaN</td>
-      <td>Albania</td>
-      <td>41.15330</td>
-      <td>20.168300</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>14568</td>
-      <td>14730</td>
-      <td>14899</td>
-      <td>15066</td>
-      <td>15231</td>
-      <td>15399</td>
-      <td>15570</td>
-      <td>15752</td>
-      <td>15955</td>
-      <td>16212</td>
+      <td>20634</td>
+      <td>20875</td>
+      <td>21202</td>
+      <td>21523</td>
+      <td>21904</td>
+      <td>22300</td>
+      <td>22721</td>
+      <td>23210</td>
+      <td>23705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>NaN</td>
-      <td>Algeria</td>
-      <td>28.03390</td>
-      <td>1.659600</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>52399</td>
-      <td>52520</td>
-      <td>52658</td>
-      <td>52804</td>
-      <td>52940</td>
-      <td>53072</td>
-      <td>53325</td>
-      <td>53399</td>
-      <td>53584</td>
-      <td>53777</td>
+      <td>57651</td>
+      <td>57942</td>
+      <td>58272</td>
+      <td>58574</td>
+      <td>58979</td>
+      <td>59527</td>
+      <td>60169</td>
+      <td>60800</td>
+      <td>61381</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>NaN</td>
-      <td>Andorra</td>
-      <td>42.50630</td>
-      <td>1.521800</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2370</td>
-      <td>2568</td>
-      <td>2568</td>
-      <td>2696</td>
-      <td>2696</td>
-      <td>2696</td>
-      <td>2995</td>
-      <td>2995</td>
-      <td>3190</td>
-      <td>3190</td>
+      <td>4665</td>
+      <td>4756</td>
+      <td>4825</td>
+      <td>4888</td>
+      <td>4910</td>
+      <td>5045</td>
+      <td>5135</td>
+      <td>5135</td>
+      <td>5319</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>NaN</td>
-      <td>Angola</td>
-      <td>-11.20270</td>
-      <td>17.873900</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>10558</td>
+      <td>10805</td>
+      <td>11035</td>
+      <td>11228</td>
+      <td>11577</td>
+      <td>11813</td>
+      <td>12102</td>
+      <td>12223</td>
+      <td>12335</td>
+    </tr>
+    <tr>
+      <th>...</th>
       <td>...</td>
-      <td>5725</td>
-      <td>5725</td>
-      <td>5958</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>263</th>
+      <td>53075</td>
+      <td>53520</td>
+      <td>54060</td>
+      <td>54775</td>
+      <td>55408</td>
+      <td>56090</td>
+      <td>56672</td>
+      <td>57226</td>
+      <td>57657</td>
+    </tr>
+    <tr>
+      <th>264</th>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>265</th>
+      <td>2062</td>
+      <td>2063</td>
+      <td>2063</td>
+      <td>2063</td>
+      <td>2063</td>
+      <td>2063</td>
+      <td>2063</td>
+      <td>2067</td>
+      <td>2070</td>
+    </tr>
+    <tr>
+      <th>266</th>
+      <td>16415</td>
+      <td>16432</td>
+      <td>16480</td>
+      <td>16543</td>
+      <td>16661</td>
+      <td>16698</td>
+      <td>16770</td>
+      <td>16819</td>
+      <td>16908</td>
+    </tr>
+    <tr>
+      <th>267</th>
+      <td>8362</td>
+      <td>8367</td>
+      <td>8374</td>
+      <td>8389</td>
+      <td>8410</td>
+      <td>8427</td>
+      <td>8444</td>
+      <td>8471</td>
+      <td>8498</td>
+    </tr>
+  </tbody>
+</table>
+
+<p align="justify">
+Les colonnes Province/State, Lat et Long, ne nous seront pas utiles. Afin de garder que les données qui vont être utiles pour notre analyse, on va utiliser la fonction <strong>dict_remove_col(...)</strong>, qui va supprimer ses colonnes du dictionnaire dict_df, les colonnes doivent être supprimées de l’ensemble des clés du dictionnaire.</p>
+
+```python
+dict_df = dp.dict_remove_col(dict_df, ["Province/State","Lat","Long"])
+print(dict_df["Deaths"].iloc[:,-9:])
+```
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>10/30/20</th>
+      <th>10/31/20</th>
+      <th>11/1/20</th>
+      <th>11/2/20</th>
+      <th>11/3/20</th>
+      <th>11/4/20</th>
+      <th>11/5/20</th>
+      <th>11/6/20</th>
+      <th>11/7/20</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1533</td>
+      <td>1536</td>
+      <td>1536</td>
+      <td>1541</td>
+      <td>1544</td>
+      <td>1548</td>
+      <td>1554</td>
+      <td>1554</td>
+      <td>1556</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>502</td>
+      <td>509</td>
+      <td>518</td>
+      <td>527</td>
+      <td>532</td>
+      <td>536</td>
+      <td>543</td>
+      <td>549</td>
+      <td>557</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1956</td>
+      <td>1964</td>
+      <td>1973</td>
+      <td>1980</td>
+      <td>1980</td>
+      <td>1999</td>
+      <td>2011</td>
+      <td>2024</td>
+      <td>2036</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>279</td>
+      <td>284</td>
+      <td>286</td>
+      <td>289</td>
+      <td>291</td>
+      <td>296</td>
+      <td>299</td>
+      <td>300</td>
+      <td>303</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>263</th>
+      <td>481</td>
+      <td>483</td>
+      <td>489</td>
+      <td>493</td>
+      <td>501</td>
+      <td>504</td>
+      <td>508</td>
+      <td>511</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <th>264</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>265</th>
+      <td>599</td>
+      <td>599</td>
+      <td>600</td>
+      <td>601</td>
+      <td>601</td>
+      <td>601</td>
+      <td>601</td>
+      <td>602</td>
+      <td>602</td>
+    </tr>
+    <tr>
+      <th>266</th>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+      <td>349</td>
+    </tr>
+    <tr>
+      <th>267</th>
+      <td>242</td>
+      <td>243</td>
+      <td>243</td>
+      <td>245</td>
+      <td>246</td>
+      <td>248</td>
+      <td>248</td>
+      <td>250</td>
+      <td>251</td>
+    </tr>
+  </tbody>
+</table>
+
+<p align="justify">
+Afin de faire une observation en fonction des pays, il nous faut regrouper le dictionnaire dict_df en fonction des pays pour toutes les clés du dictionnaire. Pour cela on va utiliser la fonction <strong>dict_by_country(...)</strong>. La fonction <strong>dict_by_country(...)</strong> change aussi les colonnes des dates en séries temporelles.</p>
+
+```python
+dict_df_by_country = dp.dict_by_country(dict_df)
+print(dict_df_by_country["Recovered"].iloc[:,-9:])
+```
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2020-10-30</th>
+      <th>2020-10-31</th>
+      <th>2020-11-01</th>
+      <th>2020-11-02</th>
+      <th>2020-11-03</th>
+      <th>2020-11-04</th>
+      <th>2020-11-05</th>
+      <th>2020-11-06</th>
+      <th>2020-11-07</th>
+    </tr>
+    <tr>
+      <th>Country/Region</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan</th>
+      <td>34258</td>
+      <td>34321</td>
+      <td>34326</td>
+      <td>34342</td>
+      <td>34355</td>
+      <td>34362</td>
+      <td>34440</td>
+      <td>34440</td>
+      <td>34446</td>
+    </tr>
+    <tr>
+      <th>Albania</th>
+      <td>11097</td>
+      <td>11189</td>
+      <td>11246</td>
+      <td>11367</td>
+      <td>11473</td>
+      <td>11578</td>
+      <td>11696</td>
+      <td>11861</td>
+      <td>12002</td>
+    </tr>
+    <tr>
+      <th>Algeria</th>
+      <td>40014</td>
+      <td>40201</td>
+      <td>40395</td>
+      <td>40577</td>
+      <td>40577</td>
+      <td>41001</td>
+      <td>41244</td>
+      <td>41510</td>
+      <td>41783</td>
+    </tr>
+    <tr>
+      <th>Andorra</th>
+      <td>3377</td>
+      <td>3475</td>
+      <td>3475</td>
+      <td>3548</td>
+      <td>3627</td>
+      <td>3734</td>
+      <td>3858</td>
+      <td>3858</td>
+      <td>4043</td>
+    </tr>
+    <tr>
+      <th>Angola</th>
+      <td>4107</td>
+      <td>4523</td>
+      <td>4920</td>
+      <td>5172</td>
+      <td>5230</td>
+      <td>5266</td>
+      <td>5350</td>
+      <td>5626</td>
+      <td>5647</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>West Bank and Gaza</th>
+      <td>45896</td>
+      <td>46309</td>
+      <td>46773</td>
+      <td>47169</td>
+      <td>47744</td>
+      <td>48224</td>
+      <td>48680</td>
+      <td>49537</td>
+      <td>49975</td>
+    </tr>
+    <tr>
+      <th>Western Sahara</th>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>Yemen</th>
+      <td>1366</td>
+      <td>1366</td>
+      <td>1366</td>
+      <td>1375</td>
+      <td>1375</td>
+      <td>1375</td>
+      <td>1375</td>
+      <td>1375</td>
+      <td>1375</td>
+    </tr>
+    <tr>
+      <th>Zambia</th>
+      <td>15600</td>
+      <td>15680</td>
+      <td>15733</td>
+      <td>15733</td>
+      <td>15763</td>
+      <td>15819</td>
+      <td>15827</td>
+      <td>15862</td>
+      <td>15873</td>
+    </tr>
+    <tr>
+      <th>Zimbabwe</th>
+      <td>7884</td>
+      <td>7894</td>
+      <td>7927</td>
+      <td>7939</td>
+      <td>7942</td>
+      <td>7967</td>
+      <td>7975</td>
+      <td>7983</td>
+      <td>7995</td>
+    </tr>
+  </tbody>
+</table>
+
+
+Finalement, on va ajouter La colonne Active pour l’ensemble des clés du dictionnaire dict_df_by_country. Pour cela on va utiliser la fonction <strong>dict_add_key(...)</strong>.
+
+```python
+dict_df_by_country = dp.dict_add_key(dict_df_by_country)
+print(dict_df_by_country["Active"].iloc[:,-9:])
+```
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2020-10-30</th>
+      <th>2020-10-31</th>
+      <th>2020-11-01</th>
+      <th>2020-11-02</th>
+      <th>2020-11-03</th>
+      <th>2020-11-04</th>
+      <th>2020-11-05</th>
+      <th>2020-11-06</th>
+      <th>2020-11-07</th>
+    </tr>
+    <tr>
+      <th>Country/Region</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan</th>
+      <td>5543</td>
+      <td>5568</td>
+      <td>5639</td>
+      <td>5750</td>
+      <td>5829</td>
+      <td>5904</td>
+      <td>5941</td>
+      <td>5981</td>
       <td>6031</td>
-      <td>6246</td>
-      <td>6366</td>
-      <td>6488</td>
-      <td>6680</td>
-      <td>6846</td>
-      <td>7096</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>NaN</td>
-      <td>Antigua and Barbuda</td>
-      <td>17.06080</td>
-      <td>-61.796400</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>107</td>
-      <td>108</td>
-      <td>111</td>
-      <td>111</td>
-      <td>111</td>
-      <td>111</td>
-      <td>111</td>
-      <td>111</td>
-      <td>112</td>
-      <td>112</td>
+      <th>Albania</th>
+      <td>9035</td>
+      <td>9177</td>
+      <td>9438</td>
+      <td>9629</td>
+      <td>9899</td>
+      <td>10186</td>
+      <td>10482</td>
+      <td>10800</td>
+      <td>11146</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>NaN</td>
-      <td>Argentina</td>
-      <td>-38.41610</td>
-      <td>-63.616700</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>824468</td>
-      <td>840915</td>
-      <td>856369</td>
-      <td>871468</td>
-      <td>883882</td>
-      <td>894206</td>
-      <td>903730</td>
-      <td>917035</td>
-      <td>931967</td>
-      <td>949063</td>
+      <th>Algeria</th>
+      <td>15681</td>
+      <td>15777</td>
+      <td>15904</td>
+      <td>16017</td>
+      <td>16422</td>
+      <td>16527</td>
+      <td>16914</td>
+      <td>17266</td>
+      <td>17562</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>NaN</td>
-      <td>Armenia</td>
-      <td>40.06910</td>
-      <td>45.038200</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>53083</td>
-      <td>53755</td>
-      <td>54473</td>
-      <td>55087</td>
-      <td>55736</td>
-      <td>56451</td>
-      <td>56821</td>
-      <td>57566</td>
-      <td>58624</td>
-      <td>59995</td>
+      <th>Andorra</th>
+      <td>1213</td>
+      <td>1206</td>
+      <td>1275</td>
+      <td>1265</td>
+      <td>1208</td>
+      <td>1236</td>
+      <td>1202</td>
+      <td>1202</td>
+      <td>1201</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>Australian Capital Territory</td>
-      <td>Australia</td>
-      <td>-35.47350</td>
-      <td>149.012400</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>113</td>
-      <td>113</td>
-      <td>113</td>
-      <td>113</td>
-      <td>113</td>
-      <td>113</td>
-      <td>113</td>
-      <td>113</td>
-      <td>113</td>
-      <td>113</td>
+      <th>Angola</th>
+      <td>6172</td>
+      <td>5998</td>
+      <td>5829</td>
+      <td>5767</td>
+      <td>6056</td>
+      <td>6251</td>
+      <td>6453</td>
+      <td>6297</td>
+      <td>6385</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>New South Wales</td>
-      <td>Australia</td>
-      <td>-33.86880</td>
-      <td>151.209300</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>4</td>
-      <td>...</td>
-      <td>4249</td>
-      <td>4261</td>
-      <td>4271</td>
-      <td>4273</td>
-      <td>4278</td>
-      <td>4284</td>
-      <td>4295</td>
-      <td>4310</td>
-      <td>4321</td>
-      <td>4326</td>
-    </tr>
-  </tbody>
-</table>
-
-<p align="justify">
-Les colonnes Province/State, Lat et Long, ne nous seront pas utiles. Afin de garder que les données qui vont être utiles pour notre analyse, on va utiliser la fonction <strong>dictdfremovecol(...)</strong>, qui va supprimer ses colonnes du dictionnaire dict_df, les colonnes doivent être supprimées de l’ensemble des clés du dictionnaire.</p>
-
-```python
-dict_df = Data_Processing.dictdfremovecol(dict_df, ["Province/State","Lat","Long"])
-dict_df["Deaths"].head(10)
-```
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country/Region</th>
-      <th>1/22/20</th>
-      <th>1/23/20</th>
-      <th>1/24/20</th>
-      <th>1/25/20</th>
-      <th>1/26/20</th>
-      <th>1/27/20</th>
-      <th>1/28/20</th>
-      <th>1/29/20</th>
-      <th>1/30/20</th>
       <th>...</th>
-      <th>10/6/20</th>
-      <th>10/7/20</th>
-      <th>10/8/20</th>
-      <th>10/9/20</th>
-      <th>10/10/20</th>
-      <th>10/11/20</th>
-      <th>10/12/20</th>
-      <th>10/13/20</th>
-      <th>10/14/20</th>
-      <th>10/15/20</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Afghanistan</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>...</td>
-      <td>1467</td>
-      <td>1469</td>
-      <td>1470</td>
-      <td>1472</td>
-      <td>1473</td>
-      <td>1477</td>
-      <td>1479</td>
-      <td>1480</td>
-      <td>1481</td>
-      <td>1481</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>Albania</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
+      <th>West Bank and Gaza</th>
+      <td>6698</td>
+      <td>6728</td>
+      <td>6798</td>
+      <td>7113</td>
+      <td>7163</td>
+      <td>7362</td>
+      <td>7484</td>
+      <td>7178</td>
+      <td>7170</td>
+    </tr>
+    <tr>
+      <th>Western Sahara</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Yemen</th>
+      <td>97</td>
+      <td>98</td>
+      <td>97</td>
+      <td>87</td>
+      <td>87</td>
+      <td>87</td>
+      <td>87</td>
+      <td>90</td>
+      <td>93</td>
+    </tr>
+    <tr>
+      <th>Zambia</th>
+      <td>466</td>
       <td>403</td>
-      <td>407</td>
-      <td>411</td>
-      <td>413</td>
-      <td>416</td>
-      <td>420</td>
-      <td>424</td>
-      <td>429</td>
-      <td>434</td>
-      <td>439</td>
+      <td>398</td>
+      <td>461</td>
+      <td>549</td>
+      <td>530</td>
+      <td>594</td>
+      <td>608</td>
+      <td>686</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>Algeria</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1768</td>
-      <td>1771</td>
-      <td>1783</td>
-      <td>1789</td>
-      <td>1795</td>
-      <td>1801</td>
-      <td>1809</td>
-      <td>1818</td>
-      <td>1827</td>
-      <td>1827</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Andorra</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>53</td>
-      <td>53</td>
-      <td>54</td>
-      <td>55</td>
-      <td>55</td>
-      <td>55</td>
-      <td>57</td>
-      <td>57</td>
-      <td>59</td>
-      <td>59</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Angola</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>211</td>
-      <td>211</td>
-      <td>208</td>
-      <td>212</td>
-      <td>218</td>
-      <td>218</td>
-      <td>219</td>
+      <th>Zimbabwe</th>
+      <td>236</td>
+      <td>230</td>
+      <td>204</td>
+      <td>205</td>
       <td>222</td>
-      <td>227</td>
-      <td>228</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Antigua and Barbuda</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Argentina</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>21827</td>
-      <td>22226</td>
-      <td>22710</td>
-      <td>23225</td>
-      <td>23581</td>
-      <td>23868</td>
-      <td>24186</td>
-      <td>24572</td>
-      <td>24921</td>
-      <td>25342</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Armenia</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>990</td>
-      <td>995</td>
-      <td>1004</td>
-      <td>1010</td>
-      <td>1016</td>
-      <td>1020</td>
-      <td>1026</td>
-      <td>1032</td>
-      <td>1039</td>
-      <td>1046</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Australia</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Australia</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
-      <td>53</td>
+      <td>212</td>
+      <td>221</td>
+      <td>238</td>
+      <td>252</td>
     </tr>
   </tbody>
 </table>
+
 
 <p align="justify">
-Afin de faire une observation en fonction des pays, il nous faut regrouper le dictionnaire dict_df en fonction des pays pour toutes les clés du dictionnaire. Pour cela on va utiliser la fonction <strong>dictdfbycountry(...)</strong>. La fonction <strong>dictdfbycountry(...)</strong> change aussi les colonnes des dates en séries temporelles.</p>
+Aussi, afin de faire une observation de l'évolution de la pandémie en fonction du temps, il nous faut transformer le dictionnaire dict_df en séries temporelles. Cela consistera, entre autres à transposer le dictionnaire dict_df_by_country afin d’avoir les dates en index. Pour cela on va utiliser la fonction <strong>dict_by_day(...)</strong>.</p>
 
 ```python
-dict_df_by_country = Data_Processing.dictdfbycountry(dict_df)
-dict_df_by_country["Recovered"].head(10)
-```
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>2020-01-22</th>
-      <th>2020-01-23</th>
-      <th>2020-01-24</th>
-      <th>2020-01-25</th>
-      <th>2020-01-26</th>
-      <th>2020-01-27</th>
-      <th>2020-01-28</th>
-      <th>2020-01-29</th>
-      <th>2020-01-30</th>
-      <th>2020-01-31</th>
-      <th>...</th>
-      <th>2020-10-06</th>
-      <th>2020-10-07</th>
-      <th>2020-10-08</th>
-      <th>2020-10-09</th>
-      <th>2020-10-10</th>
-      <th>2020-10-11</th>
-      <th>2020-10-12</th>
-      <th>2020-10-13</th>
-      <th>2020-10-14</th>
-      <th>2020-10-15</th>
-    </tr>
-    <tr>
-      <th>Country/Region</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Afghanistan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>32977</td>
-      <td>33045</td>
-      <td>33058</td>
-      <td>33058</td>
-      <td>33064</td>
-      <td>33114</td>
-      <td>33118</td>
-      <td>33308</td>
-      <td>33354</td>
-      <td>33447</td>
-    </tr>
-    <tr>
-      <th>Albania</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>8965</td>
-      <td>9115</td>
-      <td>9215</td>
-      <td>9304</td>
-      <td>9406</td>
-      <td>9500</td>
-      <td>9585</td>
-      <td>9675</td>
-      <td>9762</td>
-      <td>9864</td>
-    </tr>
-    <tr>
-      <th>Algeria</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>36763</td>
-      <td>36857</td>
-      <td>36958</td>
-      <td>37067</td>
-      <td>37170</td>
-      <td>37170</td>
-      <td>37382</td>
-      <td>37492</td>
-      <td>37603</td>
-      <td>37603</td>
-    </tr>
-    <tr>
-      <th>Andorra</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1615</td>
-      <td>1715</td>
-      <td>1715</td>
-      <td>1814</td>
-      <td>1814</td>
-      <td>1814</td>
-      <td>1928</td>
-      <td>1928</td>
-      <td>2011</td>
-      <td>2011</td>
-    </tr>
-    <tr>
-      <th>Angola</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2598</td>
-      <td>2598</td>
-      <td>2635</td>
-      <td>2685</td>
-      <td>2716</td>
-      <td>2743</td>
-      <td>2744</td>
-      <td>2761</td>
-      <td>2801</td>
-      <td>2928</td>
-    </tr>
-    <tr>
-      <th>Antigua and Barbuda</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>96</td>
-      <td>97</td>
-      <td>97</td>
-      <td>97</td>
-      <td>97</td>
-      <td>97</td>
-      <td>97</td>
-      <td>97</td>
-      <td>100</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <th>Argentina</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>660272</td>
-      <td>670725</td>
-      <td>684844</td>
-      <td>697141</td>
-      <td>709464</td>
-      <td>721380</td>
-      <td>732582</td>
-      <td>742235</td>
-      <td>751146</td>
-      <td>764859</td>
-    </tr>
-    <tr>
-      <th>Armenia</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>44932</td>
-      <td>45110</td>
-      <td>45312</td>
-      <td>45528</td>
-      <td>45771</td>
-      <td>45824</td>
-      <td>45891</td>
-      <td>46318</td>
-      <td>46713</td>
-      <td>47119</td>
-    </tr>
-    <tr>
-      <th>Australia</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>2</td>
-      <td>...</td>
-      <td>24917</td>
-      <td>24939</td>
-      <td>24971</td>
-      <td>24987</td>
-      <td>24987</td>
-      <td>25000</td>
-      <td>25029</td>
-      <td>25046</td>
-      <td>25047</td>
-      <td>25062</td>
-    </tr>
-    <tr>
-      <th>Austria</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>39790</td>
-      <td>40499</td>
-      <td>41289</td>
-      <td>42039</td>
-      <td>42829</td>
-      <td>43448</td>
-      <td>44065</td>
-      <td>44949</td>
-      <td>45846</td>
-      <td>46798</td>
-    </tr>
-  </tbody>
-</table>
-
-Finalement, on va ajouter La colonne Active pour l’ensemble des clés du dictionnaire dict_df_by_country. Pour cela on va utiliser la fonction <strong>dictdfaddkey(...)</strong>.
-
-```python
-dict_df_by_country = Data_Processing.dictdfaddkey(dict_df_by_country)
-dict_df_by_country["Active"].head(10)
-```
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>2020-01-22</th>
-      <th>2020-01-23</th>
-      <th>2020-01-24</th>
-      <th>2020-01-25</th>
-      <th>2020-01-26</th>
-      <th>2020-01-27</th>
-      <th>2020-01-28</th>
-      <th>2020-01-29</th>
-      <th>2020-01-30</th>
-      <th>2020-01-31</th>
-      <th>...</th>
-      <th>2020-10-06</th>
-      <th>2020-10-07</th>
-      <th>2020-10-08</th>
-      <th>2020-10-09</th>
-      <th>2020-10-10</th>
-      <th>2020-10-11</th>
-      <th>2020-10-12</th>
-      <th>2020-10-13</th>
-      <th>2020-10-14</th>
-      <th>2020-10-15</th>
-    </tr>
-    <tr>
-      <th>Country/Region</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Afghanistan</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>5042</td>
-      <td>5034</td>
-      <td>5088</td>
-      <td>5163</td>
-      <td>5166</td>
-      <td>5208</td>
-      <td>5273</td>
-      <td>5140</td>
-      <td>5159</td>
-      <td>5098</td>
-    </tr>
-    <tr>
-      <th>Albania</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>5200</td>
-      <td>5208</td>
-      <td>5273</td>
-      <td>5349</td>
-      <td>5409</td>
-      <td>5479</td>
-      <td>5561</td>
-      <td>5648</td>
-      <td>5759</td>
-      <td>5909</td>
-    </tr>
-    <tr>
-      <th>Algeria</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>13868</td>
-      <td>13892</td>
-      <td>13917</td>
-      <td>13948</td>
-      <td>13975</td>
-      <td>14101</td>
-      <td>14134</td>
-      <td>14089</td>
-      <td>14154</td>
-      <td>14347</td>
-    </tr>
-    <tr>
-      <th>Andorra</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>702</td>
-      <td>800</td>
-      <td>799</td>
-      <td>827</td>
-      <td>827</td>
-      <td>827</td>
-      <td>1010</td>
-      <td>1010</td>
-      <td>1120</td>
-      <td>1120</td>
-    </tr>
-    <tr>
-      <th>Angola</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2916</td>
-      <td>2916</td>
-      <td>3115</td>
-      <td>3134</td>
-      <td>3312</td>
-      <td>3405</td>
-      <td>3525</td>
-      <td>3697</td>
-      <td>3818</td>
-      <td>3940</td>
-    </tr>
-    <tr>
-      <th>Antigua and Barbuda</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>8</td>
-      <td>8</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>11</td>
-      <td>9</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>Argentina</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>142369</td>
-      <td>147964</td>
-      <td>148815</td>
-      <td>151102</td>
-      <td>150837</td>
-      <td>148958</td>
-      <td>146962</td>
-      <td>150228</td>
-      <td>155900</td>
-      <td>158862</td>
-    </tr>
-    <tr>
-      <th>Armenia</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>7161</td>
-      <td>7650</td>
-      <td>8157</td>
-      <td>8549</td>
-      <td>8949</td>
-      <td>9607</td>
-      <td>9904</td>
-      <td>10216</td>
-      <td>10872</td>
-      <td>11830</td>
-    </tr>
-    <tr>
-      <th>Australia</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-      <td>5</td>
-      <td>5</td>
-      <td>6</td>
-      <td>7</td>
-      <td>7</td>
-      <td>...</td>
-      <td>1367</td>
-      <td>1370</td>
-      <td>1358</td>
-      <td>1360</td>
-      <td>1378</td>
-      <td>1387</td>
-      <td>1382</td>
-      <td>1387</td>
-      <td>1406</td>
-      <td>1405</td>
-    </tr>
-    <tr>
-      <th>Austria</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>9207</td>
-      <td>9519</td>
-      <td>9930</td>
-      <td>10307</td>
-      <td>10742</td>
-      <td>11020</td>
-      <td>11378</td>
-      <td>11516</td>
-      <td>11954</td>
-      <td>12549</td>
-    </tr>
-  </tbody>
-</table>
-
-<p align="justify">
-Aussi, afin de faire une observation de l'évolution de la pandémie en fonction du temps, il nous faut transformer le dictionnaire dict_df en séries temporelles. Cela consistera, entre autres à transposer le dictionnaire dict_df_by_country afin d’avoir les dates en index. Pour cela on va utiliser la fonction <strong>dictdfbyday(...)</strong>.</p>
-
-```python
-dict_df_by_day = Data_Processing.dictdfbyday(dict_df_by_country)
-dict_df_by_day["Closed"].head(10)
+dict_df_by_day = dp.dict_by_day(dict_df_by_country)
+print(dict_df_by_day["Closed"].iloc[:,-9:])
 ```
 
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th>Country/Region</th>
-      <th>Afghanistan</th>
-      <th>Albania</th>
-      <th>Algeria</th>
-      <th>Andorra</th>
-      <th>Angola</th>
-      <th>Antigua and Barbuda</th>
-      <th>Argentina</th>
-      <th>Armenia</th>
-      <th>Australia</th>
-      <th>Austria</th>
-      <th>...</th>
-      <th>United Kingdom</th>
       <th>Uruguay</th>
       <th>Uzbekistan</th>
       <th>Venezuela</th>
@@ -2784,33 +1945,9 @@ dict_df_by_day["Closed"].head(10)
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
     </tr>
     <tr>
       <th>2020-01-23</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -2832,33 +1969,9 @@ dict_df_by_day["Closed"].head(10)
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
     </tr>
     <tr>
       <th>2020-01-25</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -2880,138 +1993,78 @@ dict_df_by_day["Closed"].head(10)
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
     </tr>
     <tr>
-      <th>2020-01-27</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>...</th>
       <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>2020-01-28</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>2020-11-03</th>
+      <td>2788</td>
+      <td>65389</td>
+      <td>88751</td>
+      <td>1104</td>
+      <td>48245</td>
+      <td>9</td>
+      <td>1976</td>
+      <td>16112</td>
+      <td>8188</td>
     </tr>
     <tr>
-      <th>2020-01-29</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>2020-11-04</th>
+      <td>2831</td>
+      <td>65578</td>
+      <td>89140</td>
+      <td>1104</td>
+      <td>48728</td>
+      <td>9</td>
+      <td>1976</td>
+      <td>16168</td>
+      <td>8215</td>
     </tr>
     <tr>
-      <th>2020-01-30</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>2020-11-05</th>
+      <td>2875</td>
+      <td>65833</td>
+      <td>89520</td>
+      <td>1104</td>
+      <td>49188</td>
+      <td>9</td>
+      <td>1976</td>
+      <td>16176</td>
+      <td>8223</td>
     </tr>
     <tr>
-      <th>2020-01-31</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>2020-11-06</th>
+      <td>2914</td>
+      <td>65912</td>
+      <td>89920</td>
+      <td>1105</td>
+      <td>50048</td>
+      <td>9</td>
+      <td>1977</td>
+      <td>16211</td>
+      <td>8233</td>
+    </tr>
+    <tr>
+      <th>2020-11-07</th>
+      <td>2964</td>
+      <td>66131</td>
+      <td>90326</td>
+      <td>1105</td>
+      <td>50487</td>
+      <td>9</td>
+      <td>1977</td>
+      <td>16222</td>
+      <td>8246</td>
     </tr>
   </tbody>
 </table>
@@ -3025,7 +2078,7 @@ Les bases de données sont à présent assez bien structurées on peut maintenan
 La première analyse consiste à visualiser les dix pays les plus touchés par la Covid_19 selon le nombre de cas confirmés, mort, actif, fermé et rétabli ainsi que le taux de mortalité (utiliser la bibliothèque seaborn).
 
 ```python
-wa.summury_analyse_data(summury_df_by_country)
+wa.summary_analyse_data(summary_df_by_country)
 ```
 ![svg](Image/fig_01.svg)
 
@@ -3046,7 +2099,6 @@ wa.countries_bar(summury_df_by_country, COUNTRIES)
 ### 2.2. Analyse des donnée des pays:
 La Covid_19 se répand dans le monde entier. L'un des meilleurs moyens de visualiser les données consiste à mapper les données sur la carte du monde. Heureusement, il est facile de créer une carte interactive comme celle ci-dessous.
 ```python
-word_pic = r"...\World_Map.shp"
 ca.world_map(dict_df_by_country, "Confirmed", World_PIC)
 ```
 ![](Image/Confirmed.gif)
@@ -3060,36 +2112,36 @@ Aussi, en utilisant le dictionnaire dict_df_by_date créé précédemment, il es
 ca.daily_plot_countries(dict_df_by_day, COUNTRIES)
 ```    
 <p><strong>Spain Covid_19 Statistics:</strong><br>
-    Total number of Confirmed cases : 921374<br>
-    Total number of Deaths cases    : 33553<br>
-    Total number of Active cases: 737445<br>
-    Total number of Closed cases: 183929<br>
+    Total number of Confirmed cases : 1328832<br>
+    Total number of Deaths cases    : 38833<br>
+    Total number of Active cases: 1139623<br>
+    Total number of Closed cases: 189209<br>
     Total number of Recovered cases: 150376</p>    
 <p><strong>Canada Covid_19 Statistics:</strong><br>
-  Total number of Confirmed cases: 194362<br>
-  Total number of Deaths cases   : 9756<br>
-  Total number of Active cases   : 36033<br>
-  Total number of Closed cases   : 173910<br>
-  Total number of Recovered cases: 164154</p>    
+  Total number of Confirmed cases: 263220<br>
+  Total number of Deaths cases   : 10547<br>
+  Total number of Active cases   : 36335<br>
+  Total number of Closed cases   : 226885<br>
+  Total number of Recovered cases: 216338</p>    
 <p><strong>Italy Covid_19 Statistics:*</strong><br>
-  Total number of Confirmed cases: 381602<br>
-  Total number of Deaths cases   : 36372<br>
-  Total number of Active cases   : 108257<br>
-  Total number of Closed cases   : 282336<br>
-  Total number of Recovered cases: 245964</p>    
+  Total number of Confirmed cases: 902490<br>
+  Total number of Deaths cases   : 41063<br>
+  Total number of Active cases   : 532536<br>
+  Total number of Closed cases   : 369954<br>
+  Total number of Recovered cases: 328891</p>    
 <p><strong>China Covid_19 Statistics:</strong><br>
-  Total number of Confirmed cases: 90905<br>
-  Total number of Deaths cases   : 4739<br>
+  Total number of Confirmed cases: 91622<br>
+  Total number of Deaths cases   : 4741<br>
   Total number of Active cases   : 58108<br>
-  Total number of Closed cases   : 90482<br>
-  Total number of Recovered cases: 85743</p>
+  Total number of Closed cases   : 91085<br>
+  Total number of Recovered cases: 86344</p>
  
 ![svg](Image/fig_05.svg)
 
 Dans le cas du Covid_19, il devient intéressant de visualiser l’évolution hebdomadaire de la pandémie pour un pays. Pour cela on va utiliser le dictionnaire créé précédemment, pour créer un autre avec une évolution hebdomadaire comme index. 
 
 ```python
-ca.weekly_bar(dict_df_by_day, "US")
+ca.weekly_bar(dict_df_by_day, "Canada")
 ```
 ![svg](Image/fig_06.svg)
 
@@ -3107,7 +2159,7 @@ La seconde étape consiste à entrainer notre modèle. Pour cela on va utiliser 
 model_df, dic_model, dic_score = fm.train_model(train_df, ["Confirmed"])
 ```
 
-  {'LR Train': 0.8394259736678936, 'SVM Train ': 0.9982192780430433}
+  {'LR Train': 0.6795050092913221, 'SVM Train ': 0.9137934834593749}
 
 Une fois l’entrainement de notre modèle  terminé, il devient possible de visualiser les performances de notre modélisation et de vérifier ainsi sa robustesse.
 ```python
