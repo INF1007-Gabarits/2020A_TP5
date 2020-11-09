@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def load_df(add_death_df, add_confirmed_df, add_recovered_df, add_summury_df):
+def load_df(add_death_df, add_confirmed_df, add_recovered_df, add_summary_df):
     # TO DO: Lire les base de données a partir des adresses reçu en paramètres
 
 
@@ -10,18 +10,18 @@ def load_df(add_death_df, add_confirmed_df, add_recovered_df, add_summury_df):
     return ...
 
 
-def summury_add_col(df, col, value):
+def summary_add_col(df, col, value):
     # TO DO: Ajouter une colonne au DataFrame (deux lignes)
 
     return ...
 
 
-def summury_extract_col(df, cols):
+def summary_extract_col(df, cols):
     # TO DO: extraire les colonnes désirer de la base de donnée (une seul ligne)
     return ...
 
 
-def summury_by_country(df):
+def summary_by_country(df):
     # TO DO: grouper le DataFrame par Country_Region (une seul ligne)
     return ...
 
@@ -58,7 +58,7 @@ def dict_by_day(dict_df):
     return ...
 
 
-def basic_inf_summury(summury_df):
+def basic_inf_summary(summary_df):
     # TO DO: Afficher les information suivante: Somme des nombres de cas confirmée,
     # active, fermée, mort et rétabli dans le monde.
 
