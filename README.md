@@ -1258,7 +1258,7 @@ Pour rendre la manipulation des bases de données <strong>death_df, confirmed_df
 dict_df = dp.creat_dict_df(death_df,confirmed_df,recovered_df)
 print(dict_df["Confirmed"].iloc[:,-9:])
 ```
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1416,7 +1416,7 @@ Les colonnes Province/State, Lat et Long, ne nous seront pas utiles. Afin de gar
 dict_df = dp.dict_remove_col(dict_df, ["Province/State","Lat","Long"])
 print(dict_df["Deaths"].iloc[:,-9:])
 ```
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1574,7 +1574,7 @@ Afin de faire une observation en fonction des pays, il nous faut regrouper le di
 dict_df_by_country = dp.dict_by_country(dict_df)
 print(dict_df_by_country["Recovered"].iloc[:,-9:])
 ```
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1744,7 +1744,7 @@ Finalement, on va ajouter La colonne Active pour l’ensemble des clés du dicti
 dict_df_by_country = dp.dict_add_key(dict_df_by_country)
 print(dict_df_by_country["Active"].iloc[:,-9:])
 ```
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
