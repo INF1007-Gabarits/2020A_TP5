@@ -45,6 +45,7 @@ ADD_CONFIRMED_DF = PATH_1 + PATH_2 + 'time_series_covid19_confirmed_global.csv'
 ADD_RECOVERED_DF = PATH_1 + PATH_2 + 'time_series_covid19_recovered_global.csv'
 ADD_SUMMARY_DF = PATH_1 + 'web-data/data/cases_country.csv'
 ```
+
 <p align="justify">
 La première étape du laboratoire consiste à importer les quatre bases de données. Pour cela on va utiliser la fonction <strong>load_df(...).</strong> Cette fonction a pour objectif d’importer et créer les quatres bases de données à partir des liens URL reçus en paramètre.</p>
 
