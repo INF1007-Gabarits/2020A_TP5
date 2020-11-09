@@ -980,7 +980,7 @@ Les colonnes <strong>Last_Update, Lat, Long_, Incident_Rate, People_Tested, Peop
 summury_df = dp.summury_extract_col(summury_df, COLUMNS)
 print(summary_df)
 ```
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1114,7 +1114,7 @@ Afin de faire une observation en fonction des pays, il nous faut regrouper notre
 summary_df_by_country = dp.summary_by_country(summary_df)
 summary_df_by_country.head(10)
 ```
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
