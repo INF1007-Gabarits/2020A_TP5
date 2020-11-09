@@ -38,12 +38,12 @@ L'ensemble de données peuvent être directement importé dans des bases de donn
 Durant ce laboratoire, on va travailler avec quatre bases de données, dont les liens URL sont stockés dans la variable: add_death_df, add_confirmed_df, add_recovered_df et add_summary_df.</p>
 
 ```python
-add_path_1 = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/'
-add_path_2 = 'master/csse_covid_19_data/csse_covid_19_time_series/'
-add_death_df = add_path_1 + add_path_2 + 'time_series_covid19_deaths_global.csv'
-add_confirmed_df = add_path_1 + add_path_2 + 'time_series_covid19_confirmed_global.csv'
-add_recovered_df = add_path_1 + add_path_2 + 'time_series_covid19_recovered_global.csv'
-add_summury_df = add_path_1 + 'web-data/data/cases_country.csv'
+path_1 = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/'
+path_2 = 'master/csse_covid_19_data/csse_covid_19_time_series/'
+add_death_df = path_1 + path_2 + 'time_series_covid19_deaths_global.csv'
+add_confirmed_df = path_1 + path_2 + 'time_series_covid19_confirmed_global.csv'
+add_recovered_df = path_1 + path_2 + 'time_series_covid19_recovered_global.csv'
+add_summury_df = path_1 + 'web-data/data/cases_country.csv'
 ```
 <p align="justify">
 La première étape du laboratoire consiste à importer les quatre bases de données. Pour cela on va utiliser la fonction <strong>load_df(...).</strong> Cette fonction a pour objectif d’importer et créer les quatres bases de données à partir des liens URL reçus en paramètre.</p>
