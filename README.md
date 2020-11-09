@@ -15,15 +15,10 @@
 
 ## Directives particulières
 * Le fichier Package.txt contient les packages nécessaires pour ce laboratoire;
-
 * Un fichier main.ipynb est disponible si vous voulez faire le laboratoire sur Jupyter;
-
 * Respecter [guide de codage](https://github.com/INF1007-Gabarits/Guide-codage-python) et les normes pep8;
-
-* Noms de variables et fonctions adéquats (concis, compréhensibles);
-  
-* Pas de librairies externes autres que celles déjà importées;
-  
+* Noms de variables et fonctions adéquats (concis, compréhensibles);  
+* Pas de librairies externes autres que celles déjà importées;  
 * <p align="justify"> Dans chaque programme, vous pouvez ajouter d’autres fonctions à celles décrites dans l’énoncé pour améliorer la lisibilité.</p>
 
 ## Introduction
