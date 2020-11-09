@@ -27,14 +27,14 @@ if __name__ == '__main__':
     print("\n Data recovered_df: \n", recovered_df.iloc[:,-9:])
     print("\n Data summary_df: \n", summary_df)
     
-    summary_df = dp.summury_add_col(summary_df, "Closed", summary_df["Deaths"] + summary_df["Recovered"])
+    summary_df = dp.summary_add_col(summary_df, "Closed", summary_df["Deaths"] + summary_df["Recovered"])
     print("\n Data summary_df: \n", summary_df)
     
     columns = ["Country_Region", "Confirmed", "Deaths", "Active", "Closed", "Recovered", "Mortality_Rate"]
-    summary_df = dp.summury_extract_col(summary_df, columns)
+    summary_df = dp.summary_extract_col(summary_df, columns)
     print("\n Data summary_df: \n", summary_df)
     
-    summary_df_by_country = dp.summury_by_country(summary_df)
+    summary_df_by_country = dp.summary_by_country(summary_df)
     print("\n Data summary_df_by_country: \n", summary_df_by_country)
     
     dict_df = dp.creat_dict_df(death_df, confirmed_df, recovered_df)
@@ -52,12 +52,12 @@ if __name__ == '__main__':
     dict_df_by_day = dp.dict_by_day(dict_df_by_country)
     print("\n Data dict_df (Closed): \n", dict_df_by_day["Closed"].iloc[:,-9:])
     
-    dp.basic_inf_summury(summary_df)
+    dp.basic_inf_summary(summary_df)
 
     # Partie 2.1: world_wild_analysis
-    wa.summury_analyse_data(summary_df_by_country)
+    wa.summary_analyse_data(summary_df_by_country)
 
-    wa.summury_secteur(summary_df)
+    wa.summary_secteur(summary_df)
 
     wa.countries_bar(summary_df_by_country, Countries)
 
