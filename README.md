@@ -22,8 +22,6 @@
 
 * <p align="justify"> Afin de vous inciter à écrire du code de qualité, on vous demande d'utiliser les **normes de codage** vue dans le TP3. </p>
 
-
-
 ## Introduction
 <p align="justify">
 L’analyse des données fait partie des disciplines les plus prisées de nos jours. Outil stratégique au sein des organisations, elle permet entre autres de mieux comprendre des événements qui se produisent avec les facteurs qui les favorisent, ou encore de mesurer l’impact d’une opération ou d’une politique grâce à des indicateurs de performance. Dans ce laboratoire, nous essayons de mieux comprendre l’évolution de la pandémie du nouveau coronavirus Covid-19 au Canada et dans les pays les plus touchés.</p>
