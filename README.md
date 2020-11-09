@@ -20,7 +20,7 @@
   
 * Pas de librairies externes autres que celles déjà importées;
   
-* <p align="justify"> Dans chaque programme, vous pouvez ajouter d’autres fonctions à celles décrites dans l’énoncé, ainsi que d’autres structures (et sous-structures), pour améliorer la lisibilité.</p>
+* <p align="justify"> Dans chaque programme, vous pouvez ajouter d’autres fonctions à celles décrites dans l’énoncé pour améliorer la lisibilité.</p>
 
 ## Introduction
 <p align="justify">
