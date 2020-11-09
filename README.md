@@ -43,14 +43,14 @@ path_2 = 'master/csse_covid_19_data/csse_covid_19_time_series/'
 add_death_df = path_1 + path_2 + 'time_series_covid19_deaths_global.csv'
 add_confirmed_df = path_1 + path_2 + 'time_series_covid19_confirmed_global.csv'
 add_recovered_df = path_1 + path_2 + 'time_series_covid19_recovered_global.csv'
-add_summury_df = path_1 + 'web-data/data/cases_country.csv'
+add_summary_df = path_1 + 'web-data/data/cases_country.csv'
 ```
 <p align="justify">
 La première étape du laboratoire consiste à importer les quatre bases de données. Pour cela on va utiliser la fonction <strong>load_df(...).</strong> Cette fonction a pour objectif d’importer et créer les quatres bases de données à partir des liens URL reçus en paramètre.</p>
 
 ```python
-[death_df, confirmed_df, recovered_df, summury_df] = dp.load_df(add_death_df, add_confirmed_df, 
-                                                                add_recovered_df, add_summury_df)
+[death_df, confirmed_df, recovered_df, summary_df] = dp.load_df(add_death_df, add_confirmed_df, 
+                                                                add_recovered_df, add_summary_df)
 ```
 <p align="justify">
 Une fois l’importation des bases de données est effectuée, on doit nous assurer que l’opération s’est bien déroulée. Pour cela on va afficher les 10 dernières colonnes de chaque base de données. Vous trouveriez ci-dessous un aperçu du résultat attendu..</p>
@@ -521,7 +521,7 @@ print(recovered_df.iloc[:,-9:])
 ```python
 print(summary_df)
 ```
-</style>
+
 <table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -746,7 +746,7 @@ Les bases de données importées précédemment se divisent en deux catégories 
 La première transformation qu’on va apporter à la base de données summary_df, consiste à ajouter une colonne au nom de <strong>"Closed"</strong>, qui correspond au nombre de cas fermé dans chaque pays. Pour cela on va utiliser la fonction <strong>summary_add_col(...)</strong>, qui ajoute une colonne à la base de données df reçue en paramètre, le nom et la valeur de cette colonne se trouve respectivement dans les variables col et value. La fonction retourne la nouvelle base de données.</p>
 
 ```python
-summary_df = dp.summury_add_col(summury_df, "Closed", summury_df["Deaths"] + summury_df["Recovered"])
+summary_df = dp.summary_add_col(summary_df, "Closed", summary_df["Deaths"] + summary_df["Recovered"])
 print(summary_df)
 ```
 
@@ -977,7 +977,7 @@ print(summary_df)
 Les colonnes <strong>Last_Update, Lat, Long_, Incident_Rate, People_Tested, People_Hospitalized, UID	et ISO3</strong>, ne nous seront pas utiles dans notre analyse. Afin de garder que les colonnes qui vont être utile pour notre analyse on va utiliser la fonction <strong>summary_extract_col(...)</strong>, qui extrait les colonnes reçues en paramètre à partir de la base de données summary_df. La fonction retourne la base de données filtrée.</p>
 
 ```python
-summury_df = dp.summury_extract_col(summury_df, COLUMNS)
+summary_df = dp.summary_extract_col(summary_df, COLUMNS)
 print(summary_df)
 ```
 <table border="0" class="dataframe">
@@ -2083,14 +2083,14 @@ wa.summary_analyse_data(summary_df_by_country)
 La seconde analyse consiste à visualiser le pourcentage mondial des cas confirmés par pays, le pourcentage est calculé par rapport au nombre de cas confirmé dans le monde (utiliser la méthode plotly.express).
 
 ```python
-wa.summury_secteur(summury_df)
+wa.summary_secteur(summary_df)
 ```
 ![svg](Image/fig_02.svg)
 
 La troisième analyse consiste à visualiser pour certains pays le nombre de cas confirmés, mort, actif, fermé et rétabli (utiliser la méthode plotly.graph_objects).
 
 ```python
-wa.countries_bar(summury_df_by_country, COUNTRIES)
+wa.countries_bar(summary_df_by_country, COUNTRIES)
 ```
 ![svg](Image/fig_03.svg)
 
