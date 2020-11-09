@@ -58,10 +58,10 @@ def world_map(dict_df, case_type, word_pic):
 
 
 def world_cases(dict_df):
-    # TO DO: visualiser l’évolution du nombre cumulé des cas confirmés, rétablis, morts, actif et fermé dans le monde.
-    # TO DO: Créer une figure en utilisant la bibliothèque plotly.graph_objects
+    # TO DO: visualiser l’évolution du nombre cumulé des cas confirmés, rétablis, morts, actifs et fermés dans le monde.
+    # Étape 1: Créer une figure en utilisant la bibliothèque plotly.graph_objects
 
-    # TO DO: Pour chacune des clés du dictionnaire dict_df visualiser l’évolution du nombre cumulé
+    # Étape 2: Pour chacune des clés du dictionnaire dict_df visualiser l’évolution du nombre cumulé
 
 
 
@@ -72,34 +72,26 @@ def world_cases(dict_df):
 
 def daily_plot_countries(dict_df, countries):
     # TO DO: visualiser l’évolution journalière du nombre cumulé des cas confirmés, morts, actifs et fermés pour un
-    # certain nombre de pays sélectionner.
-    # TO DO: Créer des subfigure de 2 ligne et 2 colonne de dimension 17*10
+    # certains nombres de pays sélectionner.
+    # Étape 1: Créer des subfigure de 2 lignes et 2 colonnes de dimension 17*10
 
-    # TO DO: Pour chacune des clés du dictionnaire dict_df visualiser l’évolution du nombre de cas pour chaque
+    # Étape 2: Pour chacune des clés du dictionnaire dict_df visualiser l’évolution du nombre de cas pour chaque
     # Pays de countries
 
-
-
-
-
-
-
-    # TO DO: Pour chaque pays de countries afficher un petit sommaire du nombre totales des cas confirmés, morts,
+    # Étape 3: Pour chaque pays de countries afficher un petit sommaire du nombre total des cas confirmés, morts,
     # actifs et fermés
-
-
-
 
     fig.show()
 
 
 def week_of_year(df):
     # TO DO: grouper les clés du dictionnaire dict_df par numéro de semaine
-    # TO DO: ajouter une colonne "WeekofYear" a la base de données df
+    # Étape 1: ajouter une colonne "WeekofYear" a la base de données df
+	# https://www.geeksforgeeks.org/python-pandas-datetimeindex-weekofyear/
 
     # TO DO: créer une nouvelle base de données week_df avec les mêmes colonnes que df
 
-    # TO DO: Pout toutes les semaines de la base de données calculer la somme des cas de cette semaine pour remplir
+    # Étape 2: Pour toutes les semaines de la base de données calculer la somme des cas de cette semaine pour remplir
     # la base de données week_df
     # Exemple:
     # Jour 1: 10 cas ==> semaine 1
@@ -111,27 +103,18 @@ def week_of_year(df):
     # Jour 7: 70 cas ==> semaine 1
     # ==> semaine 1: 300 cas
 
-
-    # TO DO: regrouper la base de donnee week_df par "WeekofYear"
+    # Étape 3: regrouper la base de données week_df par "WeekofYear"
 
     return ...
 
 
 def weekly_bar(dict_df, country):
     # TO DO: visualiser l’évolution hebdomadaire des cas confirmés, morts, actifs et fermés pour un de pays.
-    # TO DO: Pour l'ensemble des clés du dictionnaire dict_df regrouper les bases de donner par "WeekofYear" pensez a
+    # Étape 1: Pour l'ensemble des clés du dictionnaire dict_df regrouper les bases de donner par "WeekofYear" pensez a
     # utiliser la fonction week_of_year implémenter précédemment.
 
-    # TO DO: Créer des subfigure de 2 ligne et une colonne de dimension 15*10
+    # Étape 2: Créer des subfigure de 2 lignes et 2 colonnes de dimension 15*10
 
-    # TO DO: Pour chacune des clés du dictionnaire dict_df visualiser l’évolution hebdomadaire
-
-
-
-
-
-
-
-
+    # Étape 3: Pour chacune des clés du dictionnaire dict_df visualiser l’évolution hebdomadaire
 
     fig.show()
