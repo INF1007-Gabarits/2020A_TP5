@@ -363,6 +363,7 @@ print(confirmed_df.iloc[:,-9:])
   </tbody>
 </table>
 
+
 ```python
 print(recovered_df.iloc[:,-9:])
 ```
