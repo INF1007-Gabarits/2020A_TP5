@@ -19,6 +19,7 @@ def summary_analyse_data(df):
 
     fig.tight_layout(pad=3.0)
     fig.show()
+    plt.savefig('Image/fig_01.svg', dpi=600, format='svg')
 
 
 def summary_secteur(df):
@@ -41,7 +42,7 @@ def summary_secteur(df):
 
     fig.update_traces(textposition="inside")
     fig.show()
-
+    pio.write_image(fig, 'Image/fig_02.svg', width=1000, height=500)
 
 def countries_bar(df, countries):
     # TO DO: plot pour certains pays le nombre de cas confirmés, morts, actifs, fermés et rétablis
@@ -56,3 +57,5 @@ def countries_bar(df, countries):
                       barmode='group', bargap=0.15, bargroupgap=0.1, legend=dict(x=0.01, y=0.99),
                       legend_orientation="h")
     fig.show()
+    pio.write_image(fig, 'Image/fig_03.svg', width=1000, height=500)
+    
