@@ -68,6 +68,7 @@ def world_cases(dict_df):
     fig.update_layout(title='Worldwide COVID-19 Cases', xaxis_tickfont_size=14, yaxis=dict(title='Number of Cases'),
                       legend=dict(y=0.99, x=0.01), legend_orientation="h")
     fig.show()
+    pio.write_image(fig, 'Image/fig_04.svg', width=1000, height=500)
 
 
 def daily_plot_countries(dict_df, countries):
@@ -82,6 +83,7 @@ def daily_plot_countries(dict_df, countries):
     # actifs et fermés
 
     fig.show()
+    plt.savefig('Image/fig_05.svg', dpi=600, format='svg')
 
 
 def week_of_year(df):
@@ -118,3 +120,4 @@ def weekly_bar(dict_df, country):
     # Étape 3: Pour chacune des clés du dictionnaire dict_df visualiser l’évolution hebdomadaire
 
     fig.show()
+    plt.savefig('Image/fig_06.svg', dpi=600, format='svg')
