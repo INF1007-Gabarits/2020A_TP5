@@ -63,6 +63,7 @@ def plot_model(country_df, model_df):
     fig.update_layout(xaxis_tickfont_size=14, yaxis=dict(title='Number of Cases'),
                       legend=dict(yanchor="top", y=0.99, xanchor="left", x=0.01))
     fig.show()
+    pio.write_image(fig, 'Image/fig_07.svg', width=1000, height=500)
 
 
 def prediction_model(country_df, train_df, dic_model):
@@ -93,3 +94,4 @@ def plot_forcasting(country_df, model_df, model_pred_df):
     fig.update_layout(xaxis_tickfont_size=14, yaxis=dict(title='Number of Cases'),
                       legend=dict(yanchor="top", y=0.99, xanchor="left", x=0.01))
     fig.show()
+    pio.write_image(fig, 'Image/fig_08.svg', width=1000, height=500)
