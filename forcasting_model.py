@@ -36,7 +36,7 @@ def creat_country_data_train(dict_df, country):
 
 def train_model(df, data_type):
     lin_reg = LinearRegression(normalize=True)
-    svm = SVR(C=120000, degree=10, epsilon=0.01)
+    svm = SVR(C=100000, degree=10, epsilon=0.01)
 
     x = np.array(df["Days Since"]).reshape(-1, 1)
     y = np.array(df[data_type]).reshape(-1, 1)
