@@ -5,3 +5,11 @@ test_assignment.py
 settings/files_to_update.txt
 settings/variables.txt
 Package.txt
+TP5/Image/fig_01.png
+TP5/Image/fig_02.png
+TP5/Image/fig_03.png
+TP5/Image/fig_04.png
+TP5/Image/fig_05.png
+TP5/Image/fig_06.png
+TP5/Image/fig_07.png
+TP5/Image/fig_08.png
