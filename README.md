@@ -11,7 +11,7 @@
 - [Partie 3: Modélisation et prévision](#partie-3-mod%C3%A9lisation-et-pr%C3%A9vision)
 - [Annexe: Guide et normes de codage](#annexe-guide-et-normes-de-codage)
 
-:alarm_clock: [Date de remise le Dimanche 22 novembre 23h59](https://www.timeanddate.com/countdown/generic?iso=20201122T235959&p0=165&msg=Remise+TP5&font=cursive)
+:alarm_clock: [Date de remise le Dimanche 6 décembre 23h59](https://www.timeanddate.com/countdown/corona?iso=20201206T235959&p0=165&msg=Remise+TP6&font=cursive)
 
 ## Directives particulières
 * Le fichier Package.txt contient les packages nécessaires pour ce laboratoire;
