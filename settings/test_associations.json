@@ -1,0 +1,86 @@
+{
+    "test_load_df_death_df":{
+      "name": "Part 1: Load death dataframe",
+      "points": 1
+    },
+    "test_load_df_confirmed_df":{
+      "name": "Part 1: Load confirmed dataframe",
+      "points": 1
+    },
+    "test_load_df_recovered_df": {
+      "name": "Part 1: Load confirmed dataframe",
+      "points": 1
+    },
+    "test_load_df_summary_df": {
+      "name": "Part 1: Load summary dataframe",
+      "points": 1
+    },
+    "test_summary_add_col": {
+      "name": "Part 1: Add column to summary dataframe",
+      "points": 1
+    },
+    "test_summary_extract_col": {
+      "name": "Part 1: Extract column from summary dataframe",
+      "points": 1
+    },
+    "test_summary_by_country": {
+      "name": "Part 1: Group by country summary dataframe",
+      "points": 1
+    },
+    "test_creat_dict_df": {
+      "name": "Part 1: Creat dictionnary of dataframe",
+      "points": 1
+    },
+    "test_dict_remove_col": {
+      "name": "Part 1: Remove column from dictionnary of dataframe",
+      "points": 1
+    },
+    "test_dict_by_country": {
+      "name": "Part 1: Group by country dictionnary of dataframe",
+      "points": 1
+    },
+    "test_dict_add_key": {
+      "name": "Part 1: Add key to dictionnary of dataframe",
+      "points": 1
+    },
+    "test_dict_by_day": {
+      "name": "Part 1: Group by day dictionnary of dataframe",
+      "points": 1
+    },
+    "test_summary_analyse_data": {
+      "name": "Part 2.1: Ten countries most affected by Covid_19",
+      "points": 1
+    },
+    "test_summary_secteur": {
+      "name": "Part 2.1: Global percentage of confirmed cases by country",
+      "points": 1
+    },
+    "test_countries_bar": {
+      "name": "Part 2.1: Number of confirmed cases for some countries",
+      "points": 1
+    },
+    "test_world_cases": {
+        "name": "Part 2.2: Evolution of the cumulative case number",
+        "points": 1
+    },
+    "test_daily_plot_countries": {
+        "name": "Part 2.2: Evolution of the cumulative case number for some countries",
+        "points": 1
+    },
+    "test_weekly_bar": {
+        "name": "Part 2.2: Weekly evolution of Covid_19 for a country",
+        "points": 1
+    },
+    "test_creat_country_data_train": {
+        "name": "Part 3: Creat training data",
+        "points": 1
+    },
+    "test_plot_model": {
+        "name": "Part 3: Visualisation of training data",
+        "points": 0.5
+    },
+    "test_plot_forcasting": {
+        "name": "Visualisation of forcasting data",
+        "points": 0.5
+    }
+}
