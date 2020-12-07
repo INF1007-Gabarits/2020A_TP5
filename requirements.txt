@@ -21,7 +21,6 @@ jupyter_client	>=	6.1.7
 jupyter_core	>=	4.6.3
 jupyterlab_pygments	>=	0.1.2
 matplotlib	>=	3.3.2
-mkl	>=	2020.4
 notebook	>= 6.1.5
 numpy	>=	1.19.4
 pandas	>=	1.1.4
