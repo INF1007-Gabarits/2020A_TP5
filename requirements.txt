@@ -20,7 +20,6 @@ ipython	>=	7.16.0
 jupyter_client	>=	6.1.7
 jupyter_core	>=	4.6.3
 jupyterlab_pygments	>=	0.1.2
-libopencv	>=	4.5.0
 matplotlib	>=	3.3.2
 matplotlib-base	>=	3.3.2
 mkl	>=	2020.4
