@@ -5,6 +5,7 @@ test_assignment.py
 settings/files_to_update.txt
 settings/variables.txt
 settings/test_associations.json
+settings/requirements.txt
 Package.txt
 Image/fig_01.png
 Image/fig_02.png
