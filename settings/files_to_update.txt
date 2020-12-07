@@ -22,9 +22,9 @@ Image_Expected/fig_05.png
 Image_Expected/fig_06.png
 Image_Expected/fig_07.png
 Image_Expected/fig_08.png
-confirmed.7z
-death_df.7z
-deaths.7z
-recovered.7z
-summary.7z
+confirmed.csv
+death_df.csv
+deaths.csv
+recovered.csv
+summary.csv
 data_exepected.7z
