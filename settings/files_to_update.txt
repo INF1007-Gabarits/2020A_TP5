@@ -28,3 +28,4 @@ deaths.csv
 recovered.csv
 summary.csv
 data_exepected.7z
+requirements.txt
